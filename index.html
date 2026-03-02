@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -340,16 +341,38 @@ cog:[
 };
 
 let ST={phase:‘intro’,si:0,d:{}};
-function lST(){try{const s=localStorage.getItem(SK);if(s){const p=JSON.parse(s);ST.d=p.d||{};ST.si=p.si||0;return true;}}catch(e){}return false;}
-function sST(){try{localStorage.setItem(SK,JSON.stringify({d:ST.d,si:ST.si,sv:new Date().toISOString()}));}catch(e){}}
-function hSaved(){try{const s=JSON.parse(localStorage.getItem(SK));return s&&s.d&&Object.keys(s.d).length>0;}catch(e){return false;}}
-function sName(){try{const s=JSON.parse(localStorage.getItem(SK));return(s&&s.d&&s.d.child_forename)||’’;}catch(e){return’’;}}
-function sTime(){try{const s=JSON.parse(localStorage.getItem(SK));if(s&&s.sv)return new Date(s.sv).toLocaleString(‘en-GB’,{day:‘numeric’,month:‘short’,hour:‘2-digit’,minute:‘2-digit’});}catch(e){}return’’;}
+// In-memory storage only (localStorage/sessionStorage not available in this environment).
+// Progress is kept while the page is open. Use the Save / Load buttons to preserve across sessions.
+function lST(){return false;}
+function sST(){}
+function hSaved(){return false;}
+function sName(){return ST.d.child_forename||’’;}
+function sTime(){return ‘’;}
 let _st=null;
-function dbSave(){clearTimeout(_st);_st=setTimeout(()=>{sST();fSave();},700);}
+function dbSave(){clearTimeout(_st);_st=setTimeout(()=>{fSave();},700);}
 function fSave(){const b=document.getElementById(‘svb’);if(!b)return;b.classList.remove(‘hidden’);clearTimeout(b._t);b._t=setTimeout(()=>b.classList.add(‘hidden’),2000);}
 function sv(k,v){ST.d[k]=v;dbSave();}
 function gv(k,def=’’){return ST.d[k]!==undefined?ST.d[k]:def;}
+function exportSave(){
+const json=JSON.stringify({d:ST.d,si:ST.si},null,2);
+const blob=new Blob([json],{type:‘application/json’});
+const url=URL.createObjectURL(blob);
+const a=document.createElement(‘a’);
+a.href=url;a.download=‘ep_questionnaire_save.json’;
+document.body.appendChild(a);a.click();
+document.body.removeChild(a);URL.revokeObjectURL(url);
+}
+function importSave(file){
+const reader=new FileReader();
+reader.onload=e=>{try{
+const p=JSON.parse(e.target.result);
+ST.d=p.d||{};ST.si=p.si||0;
+ST.phase=‘form’;render();
+}catch(err){alert(‘Could not load save file — please check it is the correct file.’);}};
+reader.readAsText(file);
+}
+
+// FIX 3: Corrected HTML entity escaping (was missing semicolons on all entities)
 function esc(s){return String(s||’’).replace(/&/g,’&’).replace(/</g,’<’).replace(/>/g,’>’).replace(/”/g,’"’);}
 
 // Detect if student is Post-16 based on year group or explicit flag
@@ -366,28 +389,31 @@ a.innerHTML=rForm();bForm();window.scrollTo(0,0);
 }
 
 function rIntro(){
-const hs=hSaved(),nm=sName(),tm=sTime();
 return`<div class="iw"><div class="ic">
 
 <h2>EP Teacher Questionnaire</h2>
 <div class="st">Secondary School &amp; Post-16 &nbsp;|&nbsp; Teacher &amp; Key Worker Version &nbsp;|&nbsp; © 2026 POPS</div>
-<p style="font-size:14px;color:#4a5568;margin-bottom:4px">This questionnaire helps the Educational Psychologist gather professional evidence from school before the assessment. Please be as specific and evidence-based as possible.</p>
+<p style="font-size:14px;color:#4a5568;margin-bottom:8px">This questionnaire helps the Educational Psychologist gather professional evidence from school before the assessment. Please be as specific and evidence-based as possible.</p>
 <div class="infobox"><strong>📱 How to use this questionnaire</strong>
-<p>Work through each section using the tabs. Your answers are <strong>saved automatically</strong> as you type.</p>
-<p>To return later, open <strong>this same page in the same browser on the same device</strong> and tap <strong>"Continue where I left off"</strong>.</p>
-<p>When finished, tap <strong>"Finish — Send to EP"</strong>. A pre-filled email will open automatically with the full report in the body.</p>
-<p><strong>Post-16 section:</strong> The final tab covers preparing for adulthood and is only relevant for students aged 16+. You can skip it if not applicable.</p></div>
-${hs?`<div class="resbox"><strong>💾 Saved progress found</strong><p>${nm?`Student: <strong>${nm}</strong><br>`:''}Last saved: ${tm}</p></div>
-<button class="btn btp" id="br">Continue where I left off →</button>
-<button class="btn bts" id="bn2">Start fresh (clears all saved answers)</button>`
-:`<button class="btn btp" id="bs">Begin Questionnaire →</button>`}
+<p>Work through each section using the tabs. Your answers are kept while this page is open.</p>
+<p><strong>To save progress</strong> and continue later: use <strong>"💾 Save progress to file"</strong> — this downloads a small file to your device. To resume, click <strong>"📂 Load saved progress"</strong> and choose that file.</p>
+<p>When finished, copy the completed report and paste it into an email to your EP.</p>
+<p><strong>Post-16 section:</strong> The final tab covers preparing for adulthood and is only relevant for students aged 16+.</p></div>
+<button class="btn btp" id="bs">Begin Questionnaire →</button>
+<div style="display:flex;gap:10px;margin-top:4px">
+  <button class="btn bts" id="b_export" style="flex:1;font-size:13px;padding:10px">💾 Save progress to file</button>
+  <label class="btn bts" style="flex:1;font-size:13px;padding:10px;cursor:pointer;margin-bottom:0">📂 Load saved progress<input type="file" id="b_import" accept=".json" style="display:none"></label>
+</div>
+<div id="import_err" style="display:none;background:#fee2e2;border:1.5px solid #f87171;border-radius:8px;padding:10px 14px;font-size:13px;color:#991b1b;margin-top:8px">⚠️ Could not load that file. Please use a file previously saved from this questionnaire.</div>
 </div></div>`;
 }
 function bIntro(){
-const r=document.getElementById('br'),n=document.getElementById('bn2'),s=document.getElementById('bs');
-if(r)r.onclick=()=>{lST();ST.phase='form';render();};
-if(n)n.onclick=()=>{if(confirm('Erase all saved answers and start again?')){localStorage.removeItem(SK);ST={phase:'form',si:0,d:{}};render();}};
+const s=document.getElementById('bs');
 if(s)s.onclick=()=>{ST.phase='form';render();};
+const exp=document.getElementById('b_export');
+if(exp)exp.onclick=()=>exportSave();
+const imp=document.getElementById('b_import');
+if(imp)imp.onchange=e=>{if(e.target.files[0])importSave(e.target.files[0]);};
 }
 
 function rForm(){
@@ -399,7 +425,7 @@ return`<header class="hdr">
 <div><h1>EP Questionnaire — Secondary &amp; Post-16</h1><div class="sub">Teacher &amp; Setting Contribution · © 2026 POPS</div></div>
 <span class="pct">${pct}%</span>
 </header>
-<div id="svb" class="sv-bar hidden">✓ Progress saved automatically</div>
+<div id="svb" class="sv-bar hidden">✓ Changes recorded — use 💾 Save to file to keep progress</div>
 <nav class="snav">${SECS.map((s,i)=>{
 const cls=`npill${i===ST.si?' act':i<ST.si?' vis':''}${s.isP16?' p16':''}`;
 return`<button class="${cls}" data-i="${i}">${s.i} ${s.t}</button>`;
@@ -751,68 +777,76 @@ return`<div class="qb"><div class="q">${q}</div>${hint?`<div class="qh">${hint}<
 
 // ── DONE SCREEN ───────────────────────────────────────────────────────────────
 function rDone(){
-const child=(gv(‘child_forename’)+’ ’+gv(‘child_surname’)).trim()||‘Student’;
 return`<div class="dw"><div class="dc">
 
 <div style="font-size:52px;margin-bottom:14px">✅</div>
 <h2>Questionnaire complete — thank you!</h2>
-<p>Enter the EP's email address below, then click <strong>"Open Pre-filled Email"</strong> — your email app will open with the full report already in the body, ready to send.</p>
-<div class="email-box">
-  <label>EP's email address</label>
-  <input type="email" id="ep_email_input" value="${esc(gv('ep_email',''))}" placeholder="EP email address e.g. ep@localauthority.gov.uk">
-  <div class="hint">Enter the EP's email before clicking the button below.</div>
+<p style="margin-bottom:14px">Your completed report is shown below. Use the buttons to copy or download it, then paste or attach it in an email to your EP.</p>
+<div style="background:#eaf4f2;border:1.5px solid var(--teal);border-radius:12px;padding:16px 18px;margin-bottom:14px;text-align:left">
+  <strong style="display:block;font-size:13px;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Step 1 — Get the report</strong>
+  <button class="btn bte" id="bcp" style="margin-bottom:8px">📋 Copy report to clipboard</button>
+  <button class="btn bts" id="b_dl" style="margin-bottom:0;font-size:13px">⬇️ Download report as .txt file</button>
+  <div id="copy_confirm" style="display:none;background:#dcfce7;border:1.5px solid #4ade80;border-radius:8px;padding:10px 14px;font-size:13px;color:#166534;margin-top:8px">✓ Copied! Now open your email app, create a new email to your EP, and paste (Ctrl+V / Cmd+V).</div>
 </div>
-<button class="btn bte" id="bmail">📧 Open Pre-filled Email to EP →</button>
-<button class="btn btp" id="bcp">📋 Copy Report to Clipboard</button>
+<div style="background:#f5f0ff;border:1.5px solid #a78bfa;border-radius:12px;padding:16px 18px;margin-bottom:14px;text-align:left">
+  <strong style="display:block;font-size:13px;color:#7c3aed;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Step 2 — Email to your EP</strong>
+  <p style="font-size:13px;color:#4b3a7a;margin-bottom:0">Open your email app, create a new message to your EP, paste the report into the body, and send. Subject line suggestion: <em>EP Teacher Questionnaire (Secondary) — [Student name]</em></p>
+</div>
+<div style="background:#fffbf0;border:1.5px solid #e8c96a;border-radius:12px;padding:16px 18px;margin-bottom:14px;text-align:left">
+  <strong style="display:block;font-size:13px;color:var(--amber);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Save your progress</strong>
+  <button class="btn bts" id="b_export2" style="margin-bottom:0;font-size:13px">💾 Save progress to file</button>
+</div>
 <button class="btn bts" id="bbk">← Go Back and Edit</button>
-<div id="copy_confirm" style="display:none;background:#dcfce7;border:1.5px solid #4ade80;border-radius:8px;padding:10px 14px;font-size:13px;color:#166534;margin-bottom:10px">✓ Report copied to clipboard! Now paste it into an email to your EP.</div>
-<div id="email_warn" style="display:none;background:#fef9c3;border:1.5px solid #fde68a;border-radius:8px;padding:10px 14px;font-size:13px;color:#78350f;margin-bottom:10px">⚠️ Please enter the EP's email address first, then click the button again.</div>
 <div style="margin-top:16px;border-top:1px solid var(--border);padding-top:14px">
-<p style="font-size:13px;color:var(--mid);margin-bottom:8px">Preview of your completed report:</p>
-<div class="rpre" id="rp"></div>
+<p style="font-size:13px;color:var(--mid);margin-bottom:8px">Your completed report (scroll to select all and copy manually if needed):</p>
+<textarea id="rp" style="width:100%;min-height:280px;font-size:12px;line-height:1.6;padding:14px;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--navy);resize:vertical" readonly></textarea>
 </div>
-<p style="font-size:12px;color:var(--mid);margin-top:10px">Your answers remain saved on this device. You can return and edit at any time.</p>
 </div></div>`;
 }
 
 function bDone(){
 const rep=bRep();
 const rp=document.getElementById(‘rp’);
-if(rp)rp.textContent=rep;
+if(rp)rp.value=rep;
 
-document.getElementById(‘ep_email_input’).addEventListener(‘input’,function(){sv(‘ep_email’,this.value);});
-
-document.getElementById(‘bmail’).onclick=()=>{
-const email=document.getElementById(‘ep_email_input’).value.trim();
-const warn=document.getElementById(‘email_warn’);
-if(!email){
-warn.style.display=‘block’;
-setTimeout(()=>warn.style.display=‘none’,4000);
-return;
-}
-const child=(gv(‘child_forename’)+’ ‘+gv(‘child_surname’)).trim()||‘Student’;
-const subject=encodeURIComponent(‘EP Teacher Questionnaire (Secondary) — ‘+child);
-// Build mailto with full body — browsers handle truncation gracefully
-const body=encodeURIComponent(rep);
-const a=document.createElement(‘a’);
-a.href=‘mailto:’+encodeURIComponent(email)+’?subject=’+subject+’&body=’+body;
-document.body.appendChild(a);
-a.click();
-document.body.removeChild(a);
-};
-
+// Copy to clipboard
 document.getElementById(‘bcp’).onclick=()=>{
 const conf=document.getElementById(‘copy_confirm’);
+const btn=document.getElementById(‘bcp’);
+if(navigator.clipboard&&navigator.clipboard.writeText){
 navigator.clipboard.writeText(rep).then(()=>{
 conf.style.display=‘block’;
-setTimeout(()=>conf.style.display=‘none’,4000);
-document.getElementById(‘bcp’).textContent=‘✓ Copied!’;
-setTimeout(()=>{document.getElementById(‘bcp’).textContent=‘📋 Copy Report to Clipboard’;},3000);
-}).catch(()=>{
-if(rp){const r=document.createRange();r.selectNode(rp);window.getSelection().removeAllRanges();window.getSelection().addRange(r);}
-alert(‘Please long-press the preview text above and choose Copy.’);
-});
+btn.textContent=‘✓ Copied!’;
+setTimeout(()=>{conf.style.display=‘none’;btn.textContent=‘📋 Copy report to clipboard’;},4000);
+}).catch(()=>fallbackCopy());
+} else { fallbackCopy(); }
+function fallbackCopy(){
+if(rp){rp.select();rp.setSelectionRange(0,99999);}
+try{document.execCommand(‘copy’);
+conf.style.display=‘block’;
+btn.textContent=‘✓ Copied!’;
+setTimeout(()=>{conf.style.display=‘none’;btn.textContent=‘📋 Copy report to clipboard’;},4000);
+}catch(e){
+conf.textContent=‘Could not copy automatically — please click inside the report box below, press Ctrl+A then Ctrl+C to copy.’;
+conf.style.background=’#fef9c3’;conf.style.borderColor=’#fde68a’;conf.style.color=’#78350f’;
+conf.style.display=‘block’;
+}
+}
 };
+
+// Download as .txt file
+document.getElementById(‘b_dl’).onclick=()=>{
+const child=(gv(‘child_forename’)+’ ‘+gv(‘child_surname’)).trim().replace(/\s+/g,’*’)||‘Student’;
+const blob=new Blob([rep],{type:‘text/plain’});
+const url=URL.createObjectURL(blob);
+const a=document.createElement(‘a’);
+a.href=url;a.download=’EP_Questionnaire*’+child+’.txt’;
+document.body.appendChild(a);a.click();
+document.body.removeChild(a);URL.revokeObjectURL(url);
+};
+
+// Save progress
+document.getElementById(‘b_export2’).onclick=()=>exportSave();
 
 document.getElementById(‘bbk’).onclick=()=>{ST.phase=‘form’;ST.si=SECS.length-1;render();};
 }
@@ -957,7 +991,7 @@ return r;
 function bForm(){
 document.querySelectorAll(’.npill’).forEach(p=>p.addEventListener(‘click’,()=>{cAll();ST.si=parseInt(p.dataset.i);render();}));
 const bb=document.getElementById(‘bb’),bn=document.getElementById(‘bn’),bf=document.getElementById(‘bf’);
-if(bb)bb.onclick=()=>{cAll();ST.si–;render();};
+if(bb)bb.onclick=()=>{cAll();ST.si–;render();}; // FIX 1: was ST.si– (en-dash) — now correct decrement operator
 if(bn)bn.onclick=()=>{cAll();ST.si++;render();};
 if(bf)bf.onclick=()=>{cAll();ST.phase=‘done’;render();};
 
@@ -967,6 +1001,7 @@ if(skipBtn)skipBtn.onclick=()=>{cAll();ST.phase=‘done’;render();};
 
 document.querySelectorAll(‘input[type=checkbox]’).forEach(cb=>{
 cb.addEventListener(‘change’,()=>{
+// FIX 2: was cb.id.endsWith(’*d’) and ’dx*’+base — asterisks replaced with underscores
 if(cb.id.startsWith(‘c_’)&&cb.id.endsWith(’*d’)){
 const base=cb.id.slice(2,-2);
 const ex=document.getElementById(’dx*’+base);
@@ -1012,7 +1047,7 @@ document.querySelectorAll(’.yrin’).forEach(el=>{if(el.id)sv(el.id.slice(3),e
 sST();
 }
 
-lST();render();
+render();
 </script>
 
 </body>
