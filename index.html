@@ -1,10 +1,12 @@
+Secondary/Post -16
+
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>EP Teacher Questionnaire — Secondary & Post-16</title>
+<title>EP Teacher Questionnaire -- Secondary & Post-16</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#1b2d50;--teal:#2e8b7a;--teal-lt:#eaf4f2;--amber:#d97a2e;--amber-lt:#fdf1e6;--red:#c0392b;--green:#27734a;--slate:#4a5568;--mid:#6b7280;--border:#dde3ed;--bg:#f4f6fb;--fh:'Playfair Display',Georgia,serif;--fb:'DM Sans',-apple-system,sans-serif;--r:14px;--sh:0 2px 18px rgba(27,45,80,.09)}
@@ -154,211 +156,211 @@ input,textarea,select,button{font-family:var(--fb);font-size:15px}
 const SK='ep_sec_teacher_v1';
 
 const SECS=[
-{id:‘det’,t:‘Setting Details’,i:‘🏫’},
-{id:‘bg’,t:‘Background’,i:‘📋’},
-{id:‘att’,t:‘Attendance’,i:‘📅’},
-{id:‘sup’,t:‘Support in Place’,i:‘🤝’},
-{id:‘pri’,t:‘Main Concerns’,i:‘⭐’},
-{id:‘phy’,t:‘A: Physical & Sensory’,i:‘🏃’},
-{id:‘com’,t:‘B: Communication’,i:‘💬’},
-{id:‘sem’,t:‘C: SEMH’,i:‘❤️’},
-{id:‘cog’,t:‘D: Learning’,i:‘🧠’},
-{id:‘cv’,t:‘Student Voice’,i:‘🗣️’},
-{id:‘tv’,t:‘Staff Views’,i:‘👩‍🏫’},
-{id:‘p16’,t:‘Post-16 (if applicable)’,i:‘🎓’,isP16:true},
+{id:'det',t:'Setting Details',i:'🏫'},
+{id:'bg',t:'Background',i:'📋'},
+{id:'att',t:'Attendance',i:'📅'},
+{id:'sup',t:'Support in Place',i:'🤝'},
+{id:'pri',t:'Main Concerns',i:'⭐'},
+{id:'phy',t:'A: Physical & Sensory',i:'🏃'},
+{id:'com',t:'B: Communication',i:'💬'},
+{id:'sem',t:'C: SEMH',i:'❤️'},
+{id:'cog',t:'D: Learning',i:'🧠'},
+{id:'cv',t:'Student Voice',i:'🗣️'},
+{id:'tv',t:'Staff Views',i:'👩‍🏫'},
+{id:'p16',t:'Post-16 (if applicable)',i:'🎓',isP16:true},
 ];
 
 const TDATA={
 phy:[
-{id:‘hlth’,t:‘1. Health’,ps:[
-{id:‘ph_h1’,s:‘No health conditions significantly affecting school life or learning’,d:‘Health condition(s) affecting school life or learning’},
-{id:‘ph_h2’,s:‘Good vision — reads board, screen and resources without difficulty’,d:‘Possible vision difficulties — headaches when reading, needs or has glasses’},
-{id:‘ph_h3’,s:‘Good hearing — responds to instructions in class reliably’,d:‘Possible hearing difficulties — mishears, asks for repetition, slow to respond’},
-{id:‘ph_h4’,s:‘No regular medication or medical procedures during school day’,d:‘Needs regular medication or medical procedures during school day’},
-],n:‘n_ph_hlth’},
-{id:‘sens’,t:‘2. Sensory Processing’,ps:[
-{id:‘ph_s1’,s:‘Comfortable with textures, clothing and touch in school’,d:‘Distressed by certain textures, clothing or touch — interferes with school functioning’},
-{id:‘ph_s2’,s:‘Comfortable with classroom and school lighting’,d:‘Difficulty with light levels — covers eyes, avoids sunlit areas, complains of glare’},
-{id:‘ph_s3’,s:‘Comfortable with everyday smells in school’,d:‘Distressed by school smells — lunch hall, cleaning products, science lab’},
-{id:‘ph_s4’,s:‘Comfortable with typical noise levels in school’,d:‘Distressed or overwhelmed by noise — corridor, hall, busy classroom’},
-{id:‘ph_s5’,s:‘Engages with sensory experiences in a typical way for their age’,d:‘Unusually seeks or avoids sensory experiences compared to peers’},
-],n:‘n_ph_sens’},
-{id:‘fine’,t:‘3. Fine Motor & Writing’,ps:[
-{id:‘ph_f1’,s:‘Handwriting is legible and does not cause significant fatigue’,d:‘Handwriting is illegible, very slow or causes significant fatigue’},
-{id:‘ph_f2’,s:‘Uses technology for learning without difficulty’,d:‘Difficulty using keyboard, touchpad or assistive technology’},
-{id:‘ph_f3’,s:‘Can complete practical tasks requiring hand control (art, DT, science)’,d:‘Struggles with practical tasks requiring fine motor control’},
-],n:‘n_ph_fine’},
-{id:‘grss’,t:‘4. Physical & Coordination’,ps:[
-{id:‘ph_g1’,s:‘Moves around school safely and confidently’,d:‘Struggles with balance, coordination or body control in school’},
-{id:‘ph_g2’,s:‘Participates in PE with reasonable confidence’,d:‘Avoids or is significantly unable to access PE — coordination or confidence’},
-{id:‘ph_g3’,s:‘Moves around school without bumping into objects or people’,d:‘Consistently bumps into objects, people or furniture — appears very clumsy’},
-],n:‘n_ph_grss’},
-{id:‘dly’,t:‘5. Self-Care & Daily Functioning in School’,ps:[
-{id:‘ph_d1’,s:‘Manages school day independently (eating, personal care, equipment)’,d:‘Struggles with self-care in school — needs adult prompting or support’},
-{id:‘ph_d2’,s:‘Eats adequately during the school day’,d:‘Very restricted eating or significant eating difficulties affecting school’},
-{id:‘ph_d3’,s:‘Appears rested and alert — fatigue does not significantly affect learning’,d:‘Persistent fatigue — appears exhausted, low alertness, frequently falls asleep’},
-],n:‘n_ph_dly’},
-{id:‘saf’,t:‘6. Safety Awareness’,ps:[
-{id:‘ph_sf1’,s:‘Understands and follows safety rules reliably in school’,d:‘Difficulty following safety instructions — puts self or others at risk’},
-{id:‘ph_sf2’,s:‘Safe and appropriately supervised on school trips’,d:‘Unsafe on trips — wanders, impulsive, requires constant 1:1 supervision’},
-{id:‘ph_sf3’,s:‘Understands personal safety and appropriate boundaries with others’,d:‘Does not understand personal safety or appropriate boundaries — safeguarding concern’},
-],n:‘n_ph_saf’},
+{id:'hlth',t:'1. Health',ps:[
+{id:'ph_h1',s:'No health conditions significantly affecting school life or learning',d:'Health condition(s) affecting school life or learning'},
+{id:'ph_h2',s:'Good vision -- reads board, screen and resources without difficulty',d:'Possible vision difficulties -- headaches when reading, needs or has glasses'},
+{id:'ph_h3',s:'Good hearing -- responds to instructions in class reliably',d:'Possible hearing difficulties -- mishears, asks for repetition, slow to respond'},
+{id:'ph_h4',s:'No regular medication or medical procedures during school day',d:'Needs regular medication or medical procedures during school day'},
+],n:'n_ph_hlth'},
+{id:'sens',t:'2. Sensory Processing',ps:[
+{id:'ph_s1',s:'Comfortable with textures, clothing and touch in school',d:'Distressed by certain textures, clothing or touch -- interferes with school functioning'},
+{id:'ph_s2',s:'Comfortable with classroom and school lighting',d:'Difficulty with light levels -- covers eyes, avoids sunlit areas, complains of glare'},
+{id:'ph_s3',s:'Comfortable with everyday smells in school',d:'Distressed by school smells -- lunch hall, cleaning products, science lab'},
+{id:'ph_s4',s:'Comfortable with typical noise levels in school',d:'Distressed or overwhelmed by noise -- corridor, hall, busy classroom'},
+{id:'ph_s5',s:'Engages with sensory experiences in a typical way for their age',d:'Unusually seeks or avoids sensory experiences compared to peers'},
+],n:'n_ph_sens'},
+{id:'fine',t:'3. Fine Motor & Writing',ps:[
+{id:'ph_f1',s:'Handwriting is legible and does not cause significant fatigue',d:'Handwriting is illegible, very slow or causes significant fatigue'},
+{id:'ph_f2',s:'Uses technology for learning without difficulty',d:'Difficulty using keyboard, touchpad or assistive technology'},
+{id:'ph_f3',s:'Can complete practical tasks requiring hand control (art, DT, science)',d:'Struggles with practical tasks requiring fine motor control'},
+],n:'n_ph_fine'},
+{id:'grss',t:'4. Physical & Coordination',ps:[
+{id:'ph_g1',s:'Moves around school safely and confidently',d:'Struggles with balance, coordination or body control in school'},
+{id:'ph_g2',s:'Participates in PE with reasonable confidence',d:'Avoids or is significantly unable to access PE -- coordination or confidence'},
+{id:'ph_g3',s:'Moves around school without bumping into objects or people',d:'Consistently bumps into objects, people or furniture -- appears very clumsy'},
+],n:'n_ph_grss'},
+{id:'dly',t:'5. Self-Care & Daily Functioning in School',ps:[
+{id:'ph_d1',s:'Manages school day independently (eating, personal care, equipment)',d:'Struggles with self-care in school -- needs adult prompting or support'},
+{id:'ph_d2',s:'Eats adequately during the school day',d:'Very restricted eating or significant eating difficulties affecting school'},
+{id:'ph_d3',s:'Appears rested and alert -- fatigue does not significantly affect learning',d:'Persistent fatigue -- appears exhausted, low alertness, frequently falls asleep'},
+],n:'n_ph_dly'},
+{id:'saf',t:'6. Safety Awareness',ps:[
+{id:'ph_sf1',s:'Understands and follows safety rules reliably in school',d:'Difficulty following safety instructions -- puts self or others at risk'},
+{id:'ph_sf2',s:'Safe and appropriately supervised on school trips',d:'Unsafe on trips -- wanders, impulsive, requires constant 1:1 supervision'},
+{id:'ph_sf3',s:'Understands personal safety and appropriate boundaries with others',d:'Does not understand personal safety or appropriate boundaries -- safeguarding concern'},
+],n:'n_ph_saf'},
 ],
 com:[
-{id:‘spk’,t:‘1. Speaking (Expressive Communication)’,ps:[
-{id:‘cm_s1’,s:‘Speech is clear and easy to understand’,d:‘Speech is unclear or significantly difficult to understand’},
-{id:‘cm_s2’,s:‘Communicates needs, wants and opinions verbally’,d:‘Cannot communicate needs, wants or opinions verbally — avoids or struggles’},
-{id:‘cm_s3’,s:‘Asks for help when needed without adult prompting’,d:‘Does not ask for help — waits passively, disengages or acts out instead’},
-{id:‘cm_s4’,s:‘Initiates conversations with peers and trusted adults in school’,d:‘Does not initiate conversation — only speaks when directly addressed’},
-{id:‘cm_s5’,s:‘Explains thinking and reasoning in lessons’,d:‘Cannot explain thinking or reasoning — one-word responses or silence’},
-{id:‘cm_s6’,s:‘Contributes verbally in class discussions and group tasks’,d:‘Never contributes verbally — silent in all whole-class and group contexts’},
-{id:‘cm_s7’,s:‘Communicates appropriately in formal contexts (presentations, interviews)’,d:‘Significant difficulty in formal communication contexts’},
-],n:‘n_cm_spk’},
-{id:‘lst’,t:‘2. Listening & Processing’,ps:[
-{id:‘cm_l1’,s:‘Listens and responds appropriately when addressed by staff’,d:‘Does not listen or respond reliably — appears distracted or disengaged’},
-{id:‘cm_l2’,s:‘Follows multi-step verbal instructions reliably’,d:‘Cannot follow multi-step instructions — needs constant repetition or written backup’},
-{id:‘cm_l3’,s:‘Copes with the listening demands of secondary school lessons’,d:‘Struggles to sustain listening across lesson length — significant fatigue’},
-{id:‘cm_l4’,s:‘Processes verbal information at a typical pace’,d:‘Noticeably slow processing — needs additional time to respond’},
-],n:‘n_cm_lst’},
-{id:‘und’,t:‘3. Understanding Language & Learning’,ps:[
-{id:‘cm_u1’,s:‘Understands curriculum vocabulary across subjects’,d:‘Does not understand curriculum vocabulary — significantly impacts all subjects’},
-{id:‘cm_u2’,s:‘Understands figurative language, sarcasm and humour’,d:‘Takes language literally — confused by idioms, sarcasm or teacher humour’},
-{id:‘cm_u3’,s:‘Reads facial expressions and body language of staff and peers’,d:‘Misreads social and non-verbal cues — frequent misunderstandings’},
-{id:‘cm_u4’,s:‘Extracts meaning and key points from lessons and discussions’,d:‘Cannot extract meaning — present but not processing content’},
-{id:‘cm_u5’,s:‘Asks for clarification when confused’,d:‘Nods and pretends to understand — does not seek clarification’},
-],n:‘n_cm_und’},
-{id:‘soc’,t:‘4. Social Communication & Pragmatics’,ps:[
-{id:‘cm_p1’,s:‘Communicates appropriately with different audiences (peers, staff, visitors)’,d:‘Does not adapt communication style — same approach regardless of context’},
-{id:‘cm_p2’,s:‘Takes turns in conversations — listens as well as speaks’,d:‘Dominates conversations, interrupts constantly or is entirely passive’},
-{id:‘cm_p3’,s:‘Makes and maintains friendships in school’,d:‘Significant difficulty making or keeping friendships in school’},
-{id:‘cm_p4’,s:‘Resolves minor disagreements with peers calmly’,d:‘Cannot resolve disagreements — rapidly escalates or completely withdraws’},
-{id:‘cm_p5’,s:‘Understands others perspectives in social situations’,d:‘Significant difficulty with perspective-taking — frequent misunderstandings with peers’},
-{id:‘cm_p6’,s:‘Copes with banter, teasing and humour from peers’,d:‘Cannot cope with banter or teasing — extreme and disproportionate reactions’},
-],n:‘n_cm_soc’},
+{id:'spk',t:'1. Speaking (Expressive Communication)',ps:[
+{id:'cm_s1',s:'Speech is clear and easy to understand',d:'Speech is unclear or significantly difficult to understand'},
+{id:'cm_s2',s:'Communicates needs, wants and opinions verbally',d:'Cannot communicate needs, wants or opinions verbally -- avoids or struggles'},
+{id:'cm_s3',s:'Asks for help when needed without adult prompting',d:'Does not ask for help -- waits passively, disengages or acts out instead'},
+{id:'cm_s4',s:'Initiates conversations with peers and trusted adults in school',d:'Does not initiate conversation -- only speaks when directly addressed'},
+{id:'cm_s5',s:'Explains thinking and reasoning in lessons',d:'Cannot explain thinking or reasoning -- one-word responses or silence'},
+{id:'cm_s6',s:'Contributes verbally in class discussions and group tasks',d:'Never contributes verbally -- silent in all whole-class and group contexts'},
+{id:'cm_s7',s:'Communicates appropriately in formal contexts (presentations, interviews)',d:'Significant difficulty in formal communication contexts'},
+],n:'n_cm_spk'},
+{id:'lst',t:'2. Listening & Processing',ps:[
+{id:'cm_l1',s:'Listens and responds appropriately when addressed by staff',d:'Does not listen or respond reliably -- appears distracted or disengaged'},
+{id:'cm_l2',s:'Follows multi-step verbal instructions reliably',d:'Cannot follow multi-step instructions -- needs constant repetition or written backup'},
+{id:'cm_l3',s:'Copes with the listening demands of secondary school lessons',d:'Struggles to sustain listening across lesson length -- significant fatigue'},
+{id:'cm_l4',s:'Processes verbal information at a typical pace',d:'Noticeably slow processing -- needs additional time to respond'},
+],n:'n_cm_lst'},
+{id:'und',t:'3. Understanding Language & Learning',ps:[
+{id:'cm_u1',s:'Understands curriculum vocabulary across subjects',d:'Does not understand curriculum vocabulary -- significantly impacts all subjects'},
+{id:'cm_u2',s:'Understands figurative language, sarcasm and humour',d:'Takes language literally -- confused by idioms, sarcasm or teacher humour'},
+{id:'cm_u3',s:'Reads facial expressions and body language of staff and peers',d:'Misreads social and non-verbal cues -- frequent misunderstandings'},
+{id:'cm_u4',s:'Extracts meaning and key points from lessons and discussions',d:'Cannot extract meaning -- present but not processing content'},
+{id:'cm_u5',s:'Asks for clarification when confused',d:'Nods and pretends to understand -- does not seek clarification'},
+],n:'n_cm_und'},
+{id:'soc',t:'4. Social Communication & Pragmatics',ps:[
+{id:'cm_p1',s:'Communicates appropriately with different audiences (peers, staff, visitors)',d:'Does not adapt communication style -- same approach regardless of context'},
+{id:'cm_p2',s:'Takes turns in conversations -- listens as well as speaks',d:'Dominates conversations, interrupts constantly or is entirely passive'},
+{id:'cm_p3',s:'Makes and maintains friendships in school',d:'Significant difficulty making or keeping friendships in school'},
+{id:'cm_p4',s:'Resolves minor disagreements with peers calmly',d:'Cannot resolve disagreements -- rapidly escalates or completely withdraws'},
+{id:'cm_p5',s:'Understands others perspectives in social situations',d:'Significant difficulty with perspective-taking -- frequent misunderstandings with peers'},
+{id:'cm_p6',s:'Copes with banter, teasing and humour from peers',d:'Cannot cope with banter or teasing -- extreme and disproportionate reactions'},
+],n:'n_cm_soc'},
 ],
 sem:[
-{id:‘emo’,t:‘1. Emotional Regulation & Wellbeing’,ps:[
-{id:‘se_e1’,s:‘Approaches new tasks and challenges with reasonable confidence’,d:‘Lacks confidence — refuses or avoids new or challenging tasks in school’},
-{id:‘se_e2’,s:‘Copes with unexpected changes without significant distress’,d:‘Significant distress with any unexpected changes — routines are critical’},
-{id:‘se_e3’,s:‘Self-regulates when frustrated, anxious or overwhelmed’,d:‘Dysregulation is frequent — cannot calm independently in school’},
-{id:‘se_e4’,s:‘Recognises and can name their emotional state’,d:‘Cannot identify or name feelings — very low emotional literacy observed’},
-{id:‘se_e5’,s:‘Communicates emotional state to trusted adults’,d:‘Bottles up and explodes or shuts down — does not communicate with staff’},
-{id:‘se_e6’,s:‘Uses some effective strategies to manage stress or anxiety’,d:‘No effective coping strategies — shuts down, lashes out or leaves the room’},
-{id:‘se_e7’,s:‘Accepts feedback and correction without excessive distress’,d:‘Extreme distress or aggression when corrected — takes all feedback personally’},
-{id:‘se_e8’,s:‘Shows signs of positive wellbeing and enjoyment of school’,d:‘Persistent low mood, anxiety or disengagement observable across the school day’},
-{id:‘se_e9’,s:‘Manages transitions between lessons and activities calmly’,d:‘Significant difficulty with transitions — frequently late, distressed or avoidant’},
-{id:‘se_e10’,s:‘Motivated and engaged with learning’,d:‘Chronically low motivation — passive, avoidant or refusing across school day’},
-],n:‘n_se_emo’},
-{id:‘soc2’,t:‘2. Social Functioning & Relationships’,ps:[
-{id:‘se_s1’,s:‘Recognises and responds to others feelings appropriately’,d:‘Does not recognise or respond to others emotional states’},
-{id:‘se_s2’,s:‘Shows empathy — responds with care when peers are upset’,d:‘Does not show empathy or respond appropriately when others are distressed’},
-{id:‘se_s3’,s:‘Resolves conflicts constructively in school’,d:‘Conflicts rapidly escalate — verbal or physical aggression, or complete withdrawal’},
-{id:‘se_s4’,s:‘Works cooperatively in group tasks’,d:‘Cannot cooperate in groups — controls, disrupts, isolates self or causes conflict’},
-{id:‘se_s5’,s:‘Has a sense of belonging and connection with peers’,d:‘Isolated or excluded — consistently left out, rejected or alone in school’},
-{id:‘se_s6’,s:‘Seeks social interaction with peers’,d:‘Actively avoids all peer interaction — prefers complete isolation or adult company only’},
-{id:‘se_s7’,s:‘Negotiates and compromises in group situations’,d:‘Cannot compromise — insists on own way or becomes severely distressed’},
-{id:‘se_s8’,s:‘Responds appropriately to banter and peer humour’,d:‘Extreme reaction to any teasing — disproportionate distress or aggression’},
-],n:‘n_se_soc’},
+{id:'emo',t:'1. Emotional Regulation & Wellbeing',ps:[
+{id:'se_e1',s:'Approaches new tasks and challenges with reasonable confidence',d:'Lacks confidence -- refuses or avoids new or challenging tasks in school'},
+{id:'se_e2',s:'Copes with unexpected changes without significant distress',d:'Significant distress with any unexpected changes -- routines are critical'},
+{id:'se_e3',s:'Self-regulates when frustrated, anxious or overwhelmed',d:'Dysregulation is frequent -- cannot calm independently in school'},
+{id:'se_e4',s:'Recognises and can name their emotional state',d:'Cannot identify or name feelings -- very low emotional literacy observed'},
+{id:'se_e5',s:'Communicates emotional state to trusted adults',d:'Bottles up and explodes or shuts down -- does not communicate with staff'},
+{id:'se_e6',s:'Uses some effective strategies to manage stress or anxiety',d:'No effective coping strategies -- shuts down, lashes out or leaves the room'},
+{id:'se_e7',s:'Accepts feedback and correction without excessive distress',d:'Extreme distress or aggression when corrected -- takes all feedback personally'},
+{id:'se_e8',s:'Shows signs of positive wellbeing and enjoyment of school',d:'Persistent low mood, anxiety or disengagement observable across the school day'},
+{id:'se_e9',s:'Manages transitions between lessons and activities calmly',d:'Significant difficulty with transitions -- frequently late, distressed or avoidant'},
+{id:'se_e10',s:'Motivated and engaged with learning',d:'Chronically low motivation -- passive, avoidant or refusing across school day'},
+],n:'n_se_emo'},
+{id:'soc2',t:'2. Social Functioning & Relationships',ps:[
+{id:'se_s1',s:'Recognises and responds to others feelings appropriately',d:'Does not recognise or respond to others emotional states'},
+{id:'se_s2',s:'Shows empathy -- responds with care when peers are upset',d:'Does not show empathy or respond appropriately when others are distressed'},
+{id:'se_s3',s:'Resolves conflicts constructively in school',d:'Conflicts rapidly escalate -- verbal or physical aggression, or complete withdrawal'},
+{id:'se_s4',s:'Works cooperatively in group tasks',d:'Cannot cooperate in groups -- controls, disrupts, isolates self or causes conflict'},
+{id:'se_s5',s:'Has a sense of belonging and connection with peers',d:'Isolated or excluded -- consistently left out, rejected or alone in school'},
+{id:'se_s6',s:'Seeks social interaction with peers',d:'Actively avoids all peer interaction -- prefers complete isolation or adult company only'},
+{id:'se_s7',s:'Negotiates and compromises in group situations',d:'Cannot compromise -- insists on own way or becomes severely distressed'},
+{id:'se_s8',s:'Responds appropriately to banter and peer humour',d:'Extreme reaction to any teasing -- disproportionate distress or aggression'},
+],n:'n_se_soc'},
 ],
 cog:[
-{id:‘att_grid’,special:true},
-{id:‘subj’,t:‘1. Subject Strengths & Difficulties (Secondary — KS3/KS4)’,ps:[
-{id:‘cg_s1’,s:‘English — reading comprehension broadly on track for year group’,d:‘English — significant difficulties with reading comprehension or extended writing’},
-{id:‘cg_s2’,s:‘Maths — number, reasoning and problem-solving broadly as expected’,d:‘Maths — significant difficulties with reasoning, calculation or problem-solving’},
-{id:‘cg_s3’,s:‘Science — understands and applies scientific concepts as expected’,d:‘Science — difficulty understanding abstract concepts or written demands’},
-{id:‘cg_s4’,s:‘Humanities — can extract, analyse and write about information’,d:‘Humanities — difficulty with long-form reading, essay writing or argument construction’},
-{id:‘cg_s5’,s:‘Languages (MFL) — engages and progresses broadly as expected’,d:‘MFL — significant difficulty — phonological, memory or processing barriers’},
-{id:‘cg_s6’,s:‘Creative subjects — engages and produces work’,d:‘Creative subjects — avoids or cannot produce work in creative contexts’},
-{id:‘cg_s7’,s:‘DT / practical subjects — plans and completes tasks as expected’,d:‘Practical subjects — difficulty sequencing, planning or completing tasks independently’},
-{id:‘cg_s8’,s:‘PE — participates and engages with physical activity’,d:‘PE — avoidance, significant coordination difficulties or extreme anxiety’},
-],n:‘n_cg_subj’},
-{id:‘lb’,t:‘2. Learning Behaviours & Mindset’,ps:[
-{id:‘cg_lb1’,s:‘Motivated — shows genuine engagement with learning across subjects’,d:‘Chronically disengaged — avoids most learning tasks across the school day’},
-{id:‘cg_lb2’,s:‘Persists when work is challenging — keeps trying’,d:‘Gives up immediately when work is hard — very low task persistence’},
-{id:‘cg_lb3’,s:‘Willing to have a go at challenging tasks’,d:‘Refuses any task perceived as difficult — will not attempt’},
-{id:‘cg_lb4’,s:‘Accepts and acts on feedback and teacher marking’,d:‘Distressed or defensive about any feedback — ignores or reacts strongly’},
-{id:‘cg_lb5’,s:‘Resilient — recovers from mistakes and moves on’,d:‘Overwhelmed or devastated by mistakes — cannot continue after any error’},
-{id:‘cg_lb6’,s:‘Engages in class discussion and contributes ideas’,d:‘Never contributes — silent and withdrawn in all class and group discussions’},
-],n:‘n_cg_lb’},
-{id:‘indep’,t:‘3. Independence, Organisation & Executive Function’,ps:[
-{id:‘cg_i1’,s:‘Starts tasks independently without adult prompting’,d:‘Needs adult prompting to initiate every task — cannot self-start’},
-{id:‘cg_i2’,s:‘Manages equipment, books and materials across the school day’,d:‘Consistently loses or forgets equipment — extremely disorganised’},
-{id:‘cg_i3’,s:‘Meets deadlines and submits work on time’,d:‘Consistently misses deadlines — significant difficulty managing time’},
-{id:‘cg_i4’,s:‘Plans and organises longer pieces of work (essays, projects, coursework)’,d:‘Cannot plan or organise longer work — needs full adult scaffolding every time’},
-{id:‘cg_i5’,s:‘Manages their timetable and moves between lessons independently’,d:‘Cannot manage their timetable without significant adult support’},
-{id:‘cg_i6’,s:‘Completes and submits homework reliably’,d:‘Consistently fails to complete or submit homework’},
-],n:‘n_cg_indep’},
-{id:‘attn’,t:‘4. Attention, Memory & Cognitive Processing’,ps:[
-{id:‘cg_a1’,s:‘Sustains attention across lesson length for age’,d:‘Cannot sustain focus — very easily distracted, off-task within minutes’},
-{id:‘cg_a2’,s:‘Returns to work after distraction without adult prompting’,d:‘Cannot return to task once distracted — needs adult reset every time’},
-{id:‘cg_a3’,s:‘Retains and applies learning from previous lessons’,d:‘Very poor retention — learning does not carry over between sessions’},
-{id:‘cg_a4’,s:‘Processes information at a speed consistent with peers’,d:‘Noticeably slow processing — significantly behind peers in responding or completing’},
-{id:‘cg_a5’,s:‘Adapts to routine changes without significant distress’,d:‘Significant distress with any changes to expected routine’},
-{id:‘cg_a6’,s:‘Shows flexible thinking — tries alternative approaches’,d:‘Rigid thinking — insists on one approach, cannot adapt when it fails’},
-],n:‘n_cg_attn’},
-{id:‘semhl’,t:‘5. Social & Emotional Functioning During Learning’,ps:[
-{id:‘cg_se1’,s:‘Works constructively with peers during group tasks’,d:‘Arguments, disruption or complete avoidance of peer interaction in learning’},
-{id:‘cg_se2’,s:‘Communicates with adults appropriately and independently’,d:‘Over-reliant on adult reassurance — cannot function without constant check-ins’},
-{id:‘cg_se3’,s:‘Manages frustration during learning without significant outbursts’,d:‘Frequent outbursts or shutdowns during learning when frustrated’},
-{id:‘cg_se4’,s:‘Participates in group and whole-class learning’,d:‘Avoids all group learning — cannot access this in school’},
-],n:‘n_cg_semhl’},
-{id:‘strat’,t:‘6. What Helps and What Does Not Help’,ps:[
-{id:‘cg_st1’,s:‘Extra time improves performance significantly’,d:‘Time pressure significantly hinders this student’},
-{id:‘cg_st2’,s:‘Reduced or chunked tasks are effective’,d:‘Long unstructured assignments are a significant barrier’},
-{id:‘cg_st3’,s:‘Step-by-step written instructions are effective’,d:‘Purely verbal complex instructions are ineffective’},
-{id:‘cg_st4’,s:‘A quiet workspace significantly improves output’,d:‘Noisy or busy environments significantly hinder this student’},
-{id:‘cg_st5’,s:‘Visual supports (task cards, graphic organisers) are effective’,d:‘Abstract or purely verbal explanations are not effective’},
-{id:‘cg_st6’,s:‘Technology support (laptop, text-to-speech, apps) is effective’,d:‘Handwriting-only tasks are a significant barrier to output’},
-{id:‘cg_st7’,s:‘Regular adult check-ins during tasks are effective’,d:‘Extended independent working is not effective for this student’},
-{id:‘cg_st8’,s:‘Predictable routines and clear structure are very beneficial’,d:‘Unstructured time or unexpected changes are very difficult’},
-{id:‘cg_st9’,s:‘Pre-teaching content before whole-class lessons is effective’,d:‘Whole-class cold instruction is largely ineffective for this student’},
-],n:‘n_cg_strat’},
+{id:'att_grid',special:true},
+{id:'subj',t:'1. Subject Strengths & Difficulties (Secondary -- KS3/KS4)',ps:[
+{id:'cg_s1',s:'English -- reading comprehension broadly on track for year group',d:'English -- significant difficulties with reading comprehension or extended writing'},
+{id:'cg_s2',s:'Maths -- number, reasoning and problem-solving broadly as expected',d:'Maths -- significant difficulties with reasoning, calculation or problem-solving'},
+{id:'cg_s3',s:'Science -- understands and applies scientific concepts as expected',d:'Science -- difficulty understanding abstract concepts or written demands'},
+{id:'cg_s4',s:'Humanities -- can extract, analyse and write about information',d:'Humanities -- difficulty with long-form reading, essay writing or argument construction'},
+{id:'cg_s5',s:'Languages (MFL) -- engages and progresses broadly as expected',d:'MFL -- significant difficulty -- phonological, memory or processing barriers'},
+{id:'cg_s6',s:'Creative subjects -- engages and produces work',d:'Creative subjects -- avoids or cannot produce work in creative contexts'},
+{id:'cg_s7',s:'DT / practical subjects -- plans and completes tasks as expected',d:'Practical subjects -- difficulty sequencing, planning or completing tasks independently'},
+{id:'cg_s8',s:'PE -- participates and engages with physical activity',d:'PE -- avoidance, significant coordination difficulties or extreme anxiety'},
+],n:'n_cg_subj'},
+{id:'lb',t:'2. Learning Behaviours & Mindset',ps:[
+{id:'cg_lb1',s:'Motivated -- shows genuine engagement with learning across subjects',d:'Chronically disengaged -- avoids most learning tasks across the school day'},
+{id:'cg_lb2',s:'Persists when work is challenging -- keeps trying',d:'Gives up immediately when work is hard -- very low task persistence'},
+{id:'cg_lb3',s:'Willing to have a go at challenging tasks',d:'Refuses any task perceived as difficult -- will not attempt'},
+{id:'cg_lb4',s:'Accepts and acts on feedback and teacher marking',d:'Distressed or defensive about any feedback -- ignores or reacts strongly'},
+{id:'cg_lb5',s:'Resilient -- recovers from mistakes and moves on',d:'Overwhelmed or devastated by mistakes -- cannot continue after any error'},
+{id:'cg_lb6',s:'Engages in class discussion and contributes ideas',d:'Never contributes -- silent and withdrawn in all class and group discussions'},
+],n:'n_cg_lb'},
+{id:'indep',t:'3. Independence, Organisation & Executive Function',ps:[
+{id:'cg_i1',s:'Starts tasks independently without adult prompting',d:'Needs adult prompting to initiate every task -- cannot self-start'},
+{id:'cg_i2',s:'Manages equipment, books and materials across the school day',d:'Consistently loses or forgets equipment -- extremely disorganised'},
+{id:'cg_i3',s:'Meets deadlines and submits work on time',d:'Consistently misses deadlines -- significant difficulty managing time'},
+{id:'cg_i4',s:'Plans and organises longer pieces of work (essays, projects, coursework)',d:'Cannot plan or organise longer work -- needs full adult scaffolding every time'},
+{id:'cg_i5',s:'Manages their timetable and moves between lessons independently',d:'Cannot manage their timetable without significant adult support'},
+{id:'cg_i6',s:'Completes and submits homework reliably',d:'Consistently fails to complete or submit homework'},
+],n:'n_cg_indep'},
+{id:'attn',t:'4. Attention, Memory & Cognitive Processing',ps:[
+{id:'cg_a1',s:'Sustains attention across lesson length for age',d:'Cannot sustain focus -- very easily distracted, off-task within minutes'},
+{id:'cg_a2',s:'Returns to work after distraction without adult prompting',d:'Cannot return to task once distracted -- needs adult reset every time'},
+{id:'cg_a3',s:'Retains and applies learning from previous lessons',d:'Very poor retention -- learning does not carry over between sessions'},
+{id:'cg_a4',s:'Processes information at a speed consistent with peers',d:'Noticeably slow processing -- significantly behind peers in responding or completing'},
+{id:'cg_a5',s:'Adapts to routine changes without significant distress',d:'Significant distress with any changes to expected routine'},
+{id:'cg_a6',s:'Shows flexible thinking -- tries alternative approaches',d:'Rigid thinking -- insists on one approach, cannot adapt when it fails'},
+],n:'n_cg_attn'},
+{id:'semhl',t:'5. Social & Emotional Functioning During Learning',ps:[
+{id:'cg_se1',s:'Works constructively with peers during group tasks',d:'Arguments, disruption or complete avoidance of peer interaction in learning'},
+{id:'cg_se2',s:'Communicates with adults appropriately and independently',d:'Over-reliant on adult reassurance -- cannot function without constant check-ins'},
+{id:'cg_se3',s:'Manages frustration during learning without significant outbursts',d:'Frequent outbursts or shutdowns during learning when frustrated'},
+{id:'cg_se4',s:'Participates in group and whole-class learning',d:'Avoids all group learning -- cannot access this in school'},
+],n:'n_cg_semhl'},
+{id:'strat',t:'6. What Helps and What Does Not Help',ps:[
+{id:'cg_st1',s:'Extra time improves performance significantly',d:'Time pressure significantly hinders this student'},
+{id:'cg_st2',s:'Reduced or chunked tasks are effective',d:'Long unstructured assignments are a significant barrier'},
+{id:'cg_st3',s:'Step-by-step written instructions are effective',d:'Purely verbal complex instructions are ineffective'},
+{id:'cg_st4',s:'A quiet workspace significantly improves output',d:'Noisy or busy environments significantly hinder this student'},
+{id:'cg_st5',s:'Visual supports (task cards, graphic organisers) are effective',d:'Abstract or purely verbal explanations are not effective'},
+{id:'cg_st6',s:'Technology support (laptop, text-to-speech, apps) is effective',d:'Handwriting-only tasks are a significant barrier to output'},
+{id:'cg_st7',s:'Regular adult check-ins during tasks are effective',d:'Extended independent working is not effective for this student'},
+{id:'cg_st8',s:'Predictable routines and clear structure are very beneficial',d:'Unstructured time or unexpected changes are very difficult'},
+{id:'cg_st9',s:'Pre-teaching content before whole-class lessons is effective',d:'Whole-class cold instruction is largely ineffective for this student'},
+],n:'n_cg_strat'},
 ],
 };
 
 const OUTS={
 phy:[
-{id:‘o_ph_h’,l:‘Health outcome — After 12 months, the student will be able to better:’,ph:‘e.g., manage their own medication independently, attend more days without health-related absence’},
-{id:‘o_ph_s’,l:‘Sensory outcome — After 12 months, the student will be able to better:’,ph:‘e.g., access the lunch hall with ear defenders, tolerate different classroom environments’},
-{id:‘o_ph_p’,l:‘Physical skills outcome — After 12 months, the student will be able to better:’,ph:‘e.g., complete written tasks for 20 minutes, access PE with modified expectations’},
-{id:‘o_ph_sf’,l:‘Safety outcome — After 12 months, the student will be able to better:’,ph:‘e.g., remain with group on trips, understand personal safety boundaries’},
+{id:'o_ph_h',l:'Health outcome -- After 12 months, the student will be able to better:',ph:'e.g., manage their own medication independently, attend more days without health-related absence'},
+{id:'o_ph_s',l:'Sensory outcome -- After 12 months, the student will be able to better:',ph:'e.g., access the lunch hall with ear defenders, tolerate different classroom environments'},
+{id:'o_ph_p',l:'Physical skills outcome -- After 12 months, the student will be able to better:',ph:'e.g., complete written tasks for 20 minutes, access PE with modified expectations'},
+{id:'o_ph_sf',l:'Safety outcome -- After 12 months, the student will be able to better:',ph:'e.g., remain with group on trips, understand personal safety boundaries'},
 ],
 com:[
-{id:‘o_cm_sp’,l:‘Speaking outcome — After 12 months, the student will be able to better:’,ph:‘e.g., ask for help independently, contribute to at least one class discussion per lesson’},
-{id:‘o_cm_ls’,l:‘Listening outcome — After 12 months, the student will be able to better:’,ph:‘e.g., follow a two-step instruction reliably, sustain listening for a full lesson’},
-{id:‘o_cm_un’,l:‘Understanding outcome — After 12 months, the student will be able to better:’,ph:‘e.g., ask for clarification rather than bluffing, use curriculum vocabulary correctly in writing’},
-{id:‘o_cm_sc’,l:‘Social communication outcome — After 12 months, the student will be able to better:’,ph:‘e.g., adapt communication to different adults, resolve a disagreement without escalating’},
+{id:'o_cm_sp',l:'Speaking outcome -- After 12 months, the student will be able to better:',ph:'e.g., ask for help independently, contribute to at least one class discussion per lesson'},
+{id:'o_cm_ls',l:'Listening outcome -- After 12 months, the student will be able to better:',ph:'e.g., follow a two-step instruction reliably, sustain listening for a full lesson'},
+{id:'o_cm_un',l:'Understanding outcome -- After 12 months, the student will be able to better:',ph:'e.g., ask for clarification rather than bluffing, use curriculum vocabulary correctly in writing'},
+{id:'o_cm_sc',l:'Social communication outcome -- After 12 months, the student will be able to better:',ph:'e.g., adapt communication to different adults, resolve a disagreement without escalating'},
 ],
 sem:[
-{id:‘o_se_em’,l:‘Emotional regulation outcome — After 12 months, the student will be able to better:’,ph:‘e.g., use a regulation strategy before reaching crisis, identify and name their emotional state’},
-{id:‘o_se_sc’,l:‘Social skills outcome — After 12 months, the student will be able to better:’,ph:‘e.g., work cooperatively in a small group, seek adult support before reaching crisis point’},
+{id:'o_se_em',l:'Emotional regulation outcome -- After 12 months, the student will be able to better:',ph:'e.g., use a regulation strategy before reaching crisis, identify and name their emotional state'},
+{id:'o_se_sc',l:'Social skills outcome -- After 12 months, the student will be able to better:',ph:'e.g., work cooperatively in a small group, seek adult support before reaching crisis point'},
 ],
 cog:[
-{id:‘o_cg_ac’,l:‘Academic outcome — After 12 months, the student will be able to better:’,ph:‘e.g., produce an independent paragraph in English, retain key facts across sessions’},
-{id:‘o_cg_in’,l:‘Independence outcome — After 12 months, the student will be able to better:’,ph:‘e.g., arrive with correct equipment, start a task without adult prompting’},
-{id:‘o_cg_at’,l:‘Attention/memory outcome — After 12 months, the student will be able to better:’,ph:‘e.g., sustain focus for 20 minutes, return to task after a distraction independently’},
+{id:'o_cg_ac',l:'Academic outcome -- After 12 months, the student will be able to better:',ph:'e.g., produce an independent paragraph in English, retain key facts across sessions'},
+{id:'o_cg_in',l:'Independence outcome -- After 12 months, the student will be able to better:',ph:'e.g., arrive with correct equipment, start a task without adult prompting'},
+{id:'o_cg_at',l:'Attention/memory outcome -- After 12 months, the student will be able to better:',ph:'e.g., sustain focus for 20 minutes, return to task after a distraction independently'},
 ],
 };
 
-let ST={phase:‘intro’,si:0,d:{}};
+let ST={phase:'intro',si:0,d:{}};
 // In-memory storage only (localStorage/sessionStorage not available in this environment).
 // Progress is kept while the page is open. Use the Save / Load buttons to preserve across sessions.
 function lST(){return false;}
 function sST(){}
 function hSaved(){return false;}
-function sName(){return ST.d.child_forename||’’;}
-function sTime(){return ‘’;}
+function sName(){return ST.d.child_forename||'';}
+function sTime(){return '';}
 let _st=null;
 function dbSave(){clearTimeout(_st);_st=setTimeout(()=>{fSave();},700);}
-function fSave(){const b=document.getElementById(‘svb’);if(!b)return;b.classList.remove(‘hidden’);clearTimeout(b._t);b._t=setTimeout(()=>b.classList.add(‘hidden’),2000);}
+function fSave(){const b=document.getElementById('svb');if(!b)return;b.classList.remove('hidden');clearTimeout(b._t);b._t=setTimeout(()=>b.classList.add('hidden'),2000);}
 function sv(k,v){ST.d[k]=v;dbSave();}
-function gv(k,def=’’){return ST.d[k]!==undefined?ST.d[k]:def;}
+function gv(k,def=''){return ST.d[k]!==undefined?ST.d[k]:def;}
 function exportSave(){
 const json=JSON.stringify({d:ST.d,si:ST.si},null,2);
-const blob=new Blob([json],{type:‘application/json’});
+const blob=new Blob([json],{type:'application/json'});
 const url=URL.createObjectURL(blob);
-const a=document.createElement(‘a’);
-a.href=url;a.download=‘ep_questionnaire_save.json’;
+const a=document.createElement('a');
+a.href=url;a.download='ep_questionnaire_save.json';
 document.body.appendChild(a);a.click();
 document.body.removeChild(a);URL.revokeObjectURL(url);
 }
@@ -367,24 +369,24 @@ const reader=new FileReader();
 reader.onload=e=>{try{
 const p=JSON.parse(e.target.result);
 ST.d=p.d||{};ST.si=p.si||0;
-ST.phase=‘form’;render();
-}catch(err){alert(‘Could not load save file — please check it is the correct file.’);}};
+ST.phase='form';render();
+}catch(err){alert('Could not load save file -- please check it is the correct file.');}};
 reader.readAsText(file);
 }
 
 // FIX 3: Corrected HTML entity escaping (was missing semicolons on all entities)
-function esc(s){return String(s||’’).replace(/&/g,’&’).replace(/</g,’<’).replace(/>/g,’>’).replace(/”/g,’"’);}
+function esc(s){return String(s||'').replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>').replace(/"/g,'"');}
 
 // Detect if student is Post-16 based on year group or explicit flag
 function isPost16(){
-const yg=gv(‘year_group’,’’);
-return gv(‘is_p16’)===‘Yes — Post-16’||yg.includes(‘12’)||yg.includes(‘13’)||yg.toLowerCase().includes(‘post’);
+const yg=gv('year_group','');
+return gv('is_p16')==='Yes -- Post-16'||yg.includes('12')||yg.includes('13')||yg.toLowerCase().includes('post');
 }
 
 function render(){
-const a=document.getElementById(‘app’);
-if(ST.phase===‘intro’){a.innerHTML=rIntro();bIntro();return;}
-if(ST.phase===‘done’){a.innerHTML=rDone();bDone();return;}
+const a=document.getElementById('app');
+if(ST.phase==='intro'){a.innerHTML=rIntro();bIntro();return;}
+if(ST.phase==='done'){a.innerHTML=rDone();bDone();return;}
 a.innerHTML=rForm();bForm();window.scrollTo(0,0);
 }
 
@@ -396,7 +398,7 @@ return`<div class="iw"><div class="ic">
 <p style="font-size:14px;color:#4a5568;margin-bottom:8px">This questionnaire helps the Educational Psychologist gather professional evidence from school before the assessment. Please be as specific and evidence-based as possible.</p>
 <div class="infobox"><strong>📱 How to use this questionnaire</strong>
 <p>Work through each section using the tabs. Your answers are kept while this page is open.</p>
-<p><strong>To save progress</strong> and continue later: use <strong>"💾 Save progress to file"</strong> — this downloads a small file to your device. To resume, click <strong>"📂 Load saved progress"</strong> and choose that file.</p>
+<p><strong>To save progress</strong> and continue later: use <strong>"💾 Save progress to file"</strong> -- this downloads a small file to your device. To resume, click <strong>"📂 Load saved progress"</strong> and choose that file.</p>
 <p>When finished, copy the completed report and paste it into an email to your EP.</p>
 <p><strong>Post-16 section:</strong> The final tab covers preparing for adulthood and is only relevant for students aged 16+.</p></div>
 <button class="btn btp" id="bs">Begin Questionnaire →</button>
@@ -422,10 +424,10 @@ const pct=Math.round(ST.si/(SECS.length-1)*100);
 const isLast=ST.si===SECS.length-1;
 return`<header class="hdr">
 
-<div><h1>EP Questionnaire — Secondary &amp; Post-16</h1><div class="sub">Teacher &amp; Setting Contribution · © 2026 POPS</div></div>
+<div><h1>EP Questionnaire -- Secondary &amp; Post-16</h1><div class="sub">Teacher &amp; Setting Contribution · © 2026 POPS</div></div>
 <span class="pct">${pct}%</span>
 </header>
-<div id="svb" class="sv-bar hidden">✓ Changes recorded — use 💾 Save to file to keep progress</div>
+<div id="svb" class="sv-bar hidden">✓ Changes recorded -- use 💾 Save to file to keep progress</div>
 <nav class="snav">${SECS.map((s,i)=>{
 const cls=`npill${i===ST.si?' act':i<ST.si?' vis':''}${s.isP16?' p16':''}`;
 return`<button class="${cls}" data-i="${i}">${s.i} ${s.t}</button>`;
@@ -434,25 +436,25 @@ return`<button class="${cls}" data-i="${i}">${s.i} ${s.t}</button>`;
 ${rSec(sec)}
 <div class="nbs">
 ${ST.si>0?'<button class="btn bts" id="bb">← Back</button>':''}
-${isLast?'<button class="btn btf" id="bf">Finish — Send to EP ✓</button>':'<button class="btn btp" id="bn">Save &amp; Continue →</button>'}
+${isLast?'<button class="btn btf" id="bf">Finish -- Send to EP ✓</button>':'<button class="btn btp" id="bn">Save &amp; Continue →</button>'}
 </div>
 </div>`;
 }
 
 function rSec(sec){
-if(sec.id===‘det’)return rDet();
-if(sec.id===‘bg’)return rBg();
-if(sec.id===‘att’)return rAtt();
-if(sec.id===‘sup’)return rSup();
-if(sec.id===‘pri’)return rPri();
-if(sec.id===‘phy’)return rTick(‘phy’,‘A: Physical & Sensory’,‘🏃’,‘Tick all items based on direct observation in school. Ticking a <span style="color:var(--red);font-weight:600">difficulty</span> opens explanation boxes.’);
-if(sec.id===‘com’)return rTick(‘com’,‘B: Communication & Interaction’,‘💬’,‘Based on direct observations in school. Ticking a <span style="color:var(--red);font-weight:600">difficulty</span> opens explanation boxes.’);
-if(sec.id===‘sem’)return rTick(‘sem’,‘C: Social, Emotional & Mental Health’,‘❤️’,‘Based on direct observations in school. Ticking a <span style="color:var(--red);font-weight:600">difficulty</span> opens explanation boxes.’);
-if(sec.id===‘cog’)return rTick(‘cog’,‘D: Cognition & Learning (Secondary KS3–KS4)’,‘🧠’,‘Based on direct observations and assessments. Ticking a <span style="color:var(--red);font-weight:600">difficulty</span> opens explanation boxes.’);
-if(sec.id===‘cv’)return rCV();
-if(sec.id===‘tv’)return rTV();
-if(sec.id===‘p16’)return rP16();
-return’’;
+if(sec.id==='det')return rDet();
+if(sec.id==='bg')return rBg();
+if(sec.id==='att')return rAtt();
+if(sec.id==='sup')return rSup();
+if(sec.id==='pri')return rPri();
+if(sec.id==='phy')return rTick('phy','A: Physical & Sensory','🏃','Tick all items based on direct observation in school. Ticking a <span style="color:var(--red);font-weight:600">difficulty</span> opens explanation boxes.');
+if(sec.id==='com')return rTick('com','B: Communication & Interaction','💬','Based on direct observations in school. Ticking a <span style="color:var(--red);font-weight:600">difficulty</span> opens explanation boxes.');
+if(sec.id==='sem')return rTick('sem','C: Social, Emotional & Mental Health','❤️','Based on direct observations in school. Ticking a <span style="color:var(--red);font-weight:600">difficulty</span> opens explanation boxes.');
+if(sec.id==='cog')return rTick('cog','D: Cognition & Learning (Secondary KS3--KS4)','🧠','Based on direct observations and assessments. Ticking a <span style="color:var(--red);font-weight:600">difficulty</span> opens explanation boxes.');
+if(sec.id==='cv')return rCV();
+if(sec.id==='tv')return rTV();
+if(sec.id==='p16')return rP16();
+return'';
 }
 
 function rDet(){
@@ -479,11 +481,11 @@ return`<div class="sh"><span class="sbadge">1. Setting Details</span><h2>🏫 St
 <div><label>Home Language(s)</label><input type="text" id="fi_home_language" value="${esc(gv('home_language'))}" placeholder="e.g. English, Somali"></div></div></div>
 <div class="card"><div class="fr">
 <div><label>How long has the student been at this school?</label><input type="text" id="fi_time_in_setting" value="${esc(gv('time_in_setting'))}" placeholder="e.g. since September 2022"></div>
-<div><label>FSM / Pupil Premium status</label><select id="fi_pp"><option value="">Select...</option>${['Yes — Pupil Premium','Yes — FSM','Yes — both PP and FSM','No','Not known'].map(o=>`<option value="${o}"${gv('pp')===o?' selected':''}>${o}</option>`).join('')}</select></div></div></div>`;
+<div><label>FSM / Pupil Premium status</label><select id="fi_pp"><option value="">Select...</option>${['Yes -- Pupil Premium','Yes -- FSM','Yes -- both PP and FSM','No','Not known'].map(o=>`<option value="${o}"${gv('pp')===o?' selected':''}>${o}</option>`).join('')}</select></div></div></div>`;
 }
 
 function rBg(){
-const yno=[‘Yes’,‘No’,‘Not sure’],yna=[‘Yes’,‘No’,‘Not applicable’];
+const yno=['Yes','No','Not sure'],yna=['Yes','No','Not applicable'];
 return`<div class="sh"><span class="sbadge">2. Background & Context</span><h2>📋 Background Information</h2><p>Include only information formally shared with the school by parents, carers or other professionals.</p></div>
 
 <div class="card"><label>Confirmed or suspected diagnoses / conditions?</label><div class="hint">Tick all that apply</div>
@@ -501,14 +503,14 @@ return`<div class="sh"><span class="sbadge">2. Background & Context</span><h2>�
 <div class="rg rg-inline">${yna.map(o=>`<label class="ro${gv('bg_sc')===o?' sel':''}" style="flex:0 0 auto"><input type="radio" name="bg_sc" value="${o}"${gv('bg_sc')===o?' checked':''}>${o}</label>`).join('')}</div>
 <div id="bg_sc_d" style="margin-top:10px;${gv('bg_sc')==='Yes'?'':'display:none'}"><input type="text" id="fi_bg_sc_detail" value="${esc(gv('bg_sc_detail'))}" placeholder="e.g., Child in Need plan, Looked After Child, Early Help worker involved"></div></div>
 <div class="card"><label>Which schools or settings has the student previously attended?</label>
-<textarea id="fi_bg_schls" placeholder="e.g., Joined Year 7 from Hillside Primary; previously at Oakwood Secondary for Year 7–8...">${esc(gv('bg_schls'))}</textarea></div>
+<textarea id="fi_bg_schls" placeholder="e.g., Joined Year 7 from Hillside Primary; previously at Oakwood Secondary for Year 7--8...">${esc(gv('bg_schls'))}</textarea></div>
 <div class="card"><label>Are there any cultural, family or contextual factors the EP should be aware of?</label>
 <textarea id="fi_bg_ctx" placeholder="e.g., family arrived from Afghanistan in 2023, English is a second language, significant trauma history...">${esc(gv('bg_ctx'))}</textarea></div>`;
 }
 
 function rAtt(){
-const pct=parseFloat(gv(‘att_pct’))||0;
-let bc=’’;if(pct<90&&pct>0)bc=’ amber’;if(pct<80&&pct>0)bc=’ red’;
+const pct=parseFloat(gv('att_pct'))||0;
+let bc='';if(pct<90&&pct>0)bc=' amber';if(pct<80&&pct>0)bc=' red';
 return`<div class="sh"><span class="sbadge">3. Attendance</span><h2>📅 Attendance Record</h2><p>Attendance context is essential for the EP.</p></div>
 
 <div class="teach-note">📊 Persistent absence (below 90%) significantly affects learning and SEMH. Patterns of absence help the EP understand anxiety, avoidance and safeguarding context.</div>
@@ -518,13 +520,13 @@ return`<div class="sh"><span class="sbadge">3. Attendance</span><h2>📅 Attenda
 <div><label>Attendance % (this year)</label><input type="number" id="fi_att_pct" value="${esc(gv('att_pct'))}" placeholder="e.g. 85" min="0" max="100"></div></div>
 <div class="attbar-bg"><div class="attbar${bc}" style="width:${Math.min(pct,100)}%"></div></div>
 <div class="attlabel">${pct>0?pct+'%':''} ${pct>0&&pct<80?'⚠️ Severely absent':pct>0&&pct<90?'⚠️ Persistently absent':pct>=90?'✓ Broadly on track':''}</div></div>
-<div class="card"><label>Attendance last academic year (if known)</label><input type="text" id="fi_att_lastyear" value="${esc(gv('att_lastyear'))}" placeholder="e.g., 82% last year — continuing to decline"></div>
-<div class="card"><label>Authorised absences — total and reasons</label><textarea id="fi_att_auth" placeholder="e.g., 30 sessions — medical appointments, recurrent illness...">${esc(gv('att_auth'))}</textarea></div>
-<div class="card"><label>Unauthorised absences — total and known reasons</label><textarea id="fi_att_unauth" placeholder="e.g., 22 sessions — no reason given, parent says student refuses to attend...">${esc(gv('att_unauth'))}</textarea></div>
+<div class="card"><label>Attendance last academic year (if known)</label><input type="text" id="fi_att_lastyear" value="${esc(gv('att_lastyear'))}" placeholder="e.g., 82% last year -- continuing to decline"></div>
+<div class="card"><label>Authorised absences -- total and reasons</label><textarea id="fi_att_auth" placeholder="e.g., 30 sessions -- medical appointments, recurrent illness...">${esc(gv('att_auth'))}</textarea></div>
+<div class="card"><label>Unauthorised absences -- total and known reasons</label><textarea id="fi_att_unauth" placeholder="e.g., 22 sessions -- no reason given, parent says student refuses to attend...">${esc(gv('att_unauth'))}</textarea></div>
 <div class="card"><label>Are there patterns to the absences?</label><div class="hint">e.g., specific days, lessons, subjects, times of year</div>
 <textarea id="fi_att_pattern" placeholder="e.g., absent almost every Monday; avoids all PE days; absences cluster before exam periods...">${esc(gv('att_pattern'))}</textarea></div>
 <div class="card"><label>Is this attendance anxiety / school refusal?</label>
-<div class="rg rg-inline">${['Yes — confirmed school refusal','Possible — being investigated','No — other reasons','Not sure'].map(o=>`<label class="ro${gv('att_refusal')===o?' sel':''}" style="flex:0 0 auto"><input type="radio" name="att_refusal" value="${o}"${gv('att_refusal')===o?' checked':''}>${o}</label>`).join('')}</div>
+<div class="rg rg-inline">${['Yes -- confirmed school refusal','Possible -- being investigated','No -- other reasons','Not sure'].map(o=>`<label class="ro${gv('att_refusal')===o?' sel':''}" style="flex:0 0 auto"><input type="radio" name="att_refusal" value="${o}"${gv('att_refusal')===o?' checked':''}>${o}</label>`).join('')}</div>
 <div style="margin-top:10px"><textarea id="fi_att_refusal_detail" placeholder="Describe the nature of any refusal or anxiety around attendance...">${esc(gv('att_refusal_detail'))}</textarea></div></div>
 <div class="card"><label>Impact of absences on learning and social relationships</label><textarea id="fi_att_impact" placeholder="e.g., significant gaps in GCSE coursework; peer relationships have broken down...">${esc(gv('att_impact'))}</textarea></div>
 <div class="card"><label>What action has school taken regarding attendance?</label><textarea id="fi_att_action" placeholder="e.g., attendance team involved, Early Help referral, reduced timetable, CAMHS referral...">${esc(gv('att_action'))}</textarea></div>`;
@@ -533,21 +535,21 @@ return`<div class="sh"><span class="sbadge">3. Attendance</span><h2>📅 Attenda
 function rSup(){
 return`<div class="sh"><span class="sbadge">4. Support in Place</span><h2>🤝 Current Support in School</h2><p>Describe all support currently in place and its impact.</p></div>
 
-<div class="teach-note">📋 <strong>Be specific:</strong> Describe type, frequency and nature. Note what has worked and what has not — this is as valuable to the EP as the list itself.</div>
+<div class="teach-note">📋 <strong>Be specific:</strong> Describe type, frequency and nature. Note what has worked and what has not -- this is as valuable to the EP as the list itself.</div>
 <div class="card"><label>Does the student have an Education, Health and Care Plan (EHCP)?</label>
-<div class="rg rg-inline">${['Yes — current EHCP','Yes — pending / in process','No — but applied for','No'].map(o=>`<label class="ro${gv('ehcp')===o?' sel':''}" style="flex:0 0 auto"><input type="radio" name="ehcp" value="${o}"${gv('ehcp')===o?' checked':''}>${o}</label>`).join('')}</div></div>
+<div class="rg rg-inline">${['Yes -- current EHCP','Yes -- pending / in process','No -- but applied for','No'].map(o=>`<label class="ro${gv('ehcp')===o?' sel':''}" style="flex:0 0 auto"><input type="radio" name="ehcp" value="${o}"${gv('ehcp')===o?' checked':''}>${o}</label>`).join('')}</div></div>
 <div class="card"><label>Does the student have a SEND Support Plan / Individual Provision Map?</label>
 <div class="rg rg-inline">${['Yes','No','In development'].map(o=>`<label class="ro${gv('iep')===o?' sel':''}" style="flex:0 0 auto"><input type="radio" name="iep" value="${o}"${gv('iep')===o?' checked':''}>${o}</label>`).join('')}</div>
 <div id="iep_d" style="margin-top:10px;${gv('iep')==='Yes'?'':'display:none'}"><textarea id="fi_iep_detail" placeholder="Briefly describe current targets and most recent review date...">${esc(gv('iep_detail'))}</textarea></div></div>
 <div class="card"><label>Teaching assistant / adult support in lessons</label><textarea id="fi_sup_ta" placeholder="e.g., 1:1 TA for 15 hours per week across core subjects...">${esc(gv('sup_ta'))}</textarea></div>
 <div class="card"><label>Interventions and programmes currently in place</label><textarea id="fi_sup_int" placeholder="e.g., reading intervention twice weekly; lunchtime SEMH group; mentoring with Learning Mentor...">${esc(gv('sup_int'))}</textarea></div>
 <div class="card"><label>Pastoral and SEMH support in school</label><textarea id="fi_sup_pastoral" placeholder="e.g., daily check-in with Head of Year; school counsellor fortnightly; key worker identified...">${esc(gv('sup_pastoral'))}</textarea></div>
-<div class="card"><label>CAMHS or external mental health support</label><textarea id="fi_sup_camhs" placeholder="e.g., CAMHS assessment completed — on waiting list for therapy; school counsellor weekly...">${esc(gv('sup_camhs'))}</textarea></div>
+<div class="card"><label>CAMHS or external mental health support</label><textarea id="fi_sup_camhs" placeholder="e.g., CAMHS assessment completed -- on waiting list for therapy; school counsellor weekly...">${esc(gv('sup_camhs'))}</textarea></div>
 <div class="card"><label>Speech &amp; Language Therapy input</label><textarea id="fi_sup_salt" placeholder="e.g., SALT review recommended by school; school programme in place...">${esc(gv('sup_salt'))}</textarea></div>
 <div class="card"><label>Occupational Therapy (OT) input</label><textarea id="fi_sup_ot" placeholder="e.g., OT programme for handwriting; movement breaks every lesson; laptop provided...">${esc(gv('sup_ot'))}</textarea></div>
 <div class="card"><label>Any other specialist or external professional involvement</label><textarea id="fi_sup_ext" placeholder="e.g., previous EP assessment, outreach from specialist provision, ADHD support worker...">${esc(gv('sup_ext'))}</textarea></div>
 <div class="card"><label>Environmental and curriculum adaptations in place</label><textarea id="fi_sup_env" placeholder="e.g., laptop for written output, quiet room access, exam access arrangements, reduced timetable...">${esc(gv('sup_env'))}</textarea></div>
-<div class="card"><label>Exam access arrangements currently in place</label><textarea id="fi_sup_eaa" placeholder="e.g., 25% extra time, computer reader, rest breaks — applied for and granted...">${esc(gv('sup_eaa'))}</textarea></div>
+<div class="card"><label>Exam access arrangements currently in place</label><textarea id="fi_sup_eaa" placeholder="e.g., 25% extra time, computer reader, rest breaks -- applied for and granted...">${esc(gv('sup_eaa'))}</textarea></div>
 <div class="card"><label>What has worked well and had the most positive impact?</label><textarea id="fi_sup_worked" placeholder="e.g., laptop has transformed written output; 1:1 check-ins have reduced refusal...">${esc(gv('sup_worked'))}</textarea></div>
 <div class="card"><label>What has not worked or had limited impact?</label><textarea id="fi_sup_notworked" placeholder="e.g., reward charts have no effect; group interventions make anxiety worse...">${esc(gv('sup_notworked'))}</textarea></div>
 <div class="card"><label>What does this student need that school cannot currently provide without additional funding or specialist support?</label><textarea id="fi_sup_gaps" placeholder="e.g., specialist dyslexia teaching 5 days a week; intensive therapeutic support; specialist placement...">${esc(gv('sup_gaps'))}</textarea></div>`;
@@ -555,11 +557,11 @@ return`<div class="sh"><span class="sbadge">4. Support in Place</span><h2>🤝 C
 
 function rPri(){
 const areas=[
-{id:‘pr_cog’,l:‘Cognition and Learning — e.g., reading, writing, maths, memory, processing, organisation’},
-{id:‘pr_com’,l:‘Communication and Interaction — e.g., speech, language, social communication, listening’},
-{id:‘pr_sem’,l:‘Social, Emotional and Mental Health — e.g., anxiety, regulation, behaviour, wellbeing, attendance’},
-{id:‘pr_phy’,l:‘Physical and Sensory — e.g., coordination, sensory processing, fine motor, health’},
-{id:‘pr_hlt’,l:‘Health — e.g., medical conditions significantly affecting school life and learning’},
+{id:'pr_cog',l:'Cognition and Learning -- e.g., reading, writing, maths, memory, processing, organisation'},
+{id:'pr_com',l:'Communication and Interaction -- e.g., speech, language, social communication, listening'},
+{id:'pr_sem',l:'Social, Emotional and Mental Health -- e.g., anxiety, regulation, behaviour, wellbeing, attendance'},
+{id:'pr_phy',l:'Physical and Sensory -- e.g., coordination, sensory processing, fine motor, health'},
+{id:'pr_hlt',l:'Health -- e.g., medical conditions significantly affecting school life and learning'},
 ];
 return`<div class="sh"><span class="sbadge">5. Main Concerns</span><h2>⭐ What are your main professional concerns?</h2>
 
@@ -567,21 +569,21 @@ return`<div class="sh"><span class="sbadge">5. Main Concerns</span><h2>⭐ What 
 <div class="prt">${areas.map(a=>`<div class="prr">
 <input type="checkbox" id="c_${a.id}"${gv(a.id)?' checked':''}>
 <label class="prrl" for="c_${a.id}">${a.l}</label>
-<div class="prrs">Priority: <select id="s_${a.id}"><option value="">—</option>${[1,2,3,4,5].map(n=>`<option value="${n}"${gv(a.id+'_p')==n?' selected':''}>${n}</option>`).join('')}</select></div>
+<div class="prrs">Priority: <select id="s_${a.id}"><option value="">--</option>${[1,2,3,4,5].map(n=>`<option value="${n}"${gv(a.id+'_p')==n?' selected':''}>${n}</option>`).join('')}</select></div>
 </div>`).join('')}</div>
 ${qb('pr_other','Any other professional concern not listed above?','e.g., school refusal, self-harm, suicidal ideation, significant trauma, safeguarding concerns')}`;
 }
 
 function rTick(sec,title,icon,desc){
 const subs=TDATA[sec];
-let html=`<div class="sh"><span class="sbadge">Section ${title.split(’:’)[0]}</span><h2>${icon} ${title.split(’: ‘).slice(1).join(’: ’)||title}</h2><p>${desc}</p></div>
+let html=`<div class="sh"><span class="sbadge">Section ${title.split(':')[0]}</span><h2>${icon} ${title.split(': ').slice(1).join(': ')||title}</h2><p>${desc}</p></div>
 
-<div class="sinote">✅ <strong>Left (green)</strong> = observed strengths &nbsp;|&nbsp; ⚠️ <strong>Right (red)</strong> = observed difficulties. Base on direct observation — tick as many as apply on both sides.</div>`;
+<div class="sinote">✅ <strong>Left (green)</strong> = observed strengths &nbsp;|&nbsp; ⚠️ <strong>Right (red)</strong> = observed difficulties. Base on direct observation -- tick as many as apply on both sides.</div>`;
 subs.forEach(sub=>{
 if(sub.special){html+=rAttGrid();return;}
 html+=`<div class="tsec">
 <div class="tttl">${sub.t}</div>
-<div class="tchdr"><span class="shdr">✅ Strengths — Observed in School</span><span class="dhdr">⚠️ Difficulties — Observed in School</span></div>
+<div class="tchdr"><span class="shdr">✅ Strengths -- Observed in School</span><span class="dhdr">⚠️ Difficulties -- Observed in School</span></div>
 <div class="tbody">
 <div class="tcol sc">${sub.ps.map(p=>`<label class="ti"><input type="checkbox" id="c_${p.id}_s"${gv(p.id+'_s')?' checked':''}><span>${p.s}</span></label>`).join('')}</div>
 <div class="tcol dc">${sub.ps.map(p=>`<div>
@@ -589,7 +591,7 @@ html+=`<div class="tsec">
 ${rDex(p.id)}
 </div>`).join('')}</div>
 </div>
-<div class="tnotes"><label>Additional notes — specific examples help the EP:</label>
+<div class="tnotes"><label>Additional notes -- specific examples help the EP:</label>
 <textarea id="fi_${sub.n}" placeholder="Add further observations or examples...">${esc(gv(sub.n))}</textarea></div>
 </div>`;
 });
@@ -597,19 +599,19 @@ html+=rOuts(sec);return html;
 }
 
 function rDex(pid){
-const open=gv(pid+’_d’);
+const open=gv(pid+'_d');
 return`<div class="dex${open?' open':''}" id="dx_${pid}">
 
 <div class="egrid">
 <div><span class="dlbl">How does this present in school?</span>
-<textarea id="fi_${pid}_imp" placeholder="Describe how this presents in school — give concrete examples...">${esc(gv(pid+'_imp'))}</textarea></div>
+<textarea id="fi_${pid}_imp" placeholder="Describe how this presents in school -- give concrete examples...">${esc(gv(pid+'_imp'))}</textarea></div>
 <div><span class="dlbl">Strategies / support in place &amp; impact?</span>
 <textarea id="fi_${pid}_sup" placeholder="Describe current strategies and their impact...">${esc(gv(pid+'_sup'))}</textarea></div>
 </div></div>`;
 }
 
 function rOuts(sec){
-const outs=OUTS[sec];if(!outs)return’’;
+const outs=OUTS[sec];if(!outs)return'';
 return`<div class="obox"><h3>🎯 Desired Outcomes (School View)</h3>
 
 <p>After 12 months of support, what would you most like this student to be able to do?</p>
@@ -618,8 +620,8 @@ ${outs.map(o=>`<div class="oi"><label>${o.l}</label><textarea id="fi_${o.id}" pl
 }
 
 function rAttGrid(){
-const subjs=[‘Reading’,‘Writing’,‘Maths’,‘Science’,‘MFL’,‘Humanities’,‘Creative subjects’,‘DT / Practical’,‘PE / PSHCE’];
-const lvls=[{v:‘depth’,l:‘Greater depth’},{v:‘age’,l:‘Age expected’},{v:‘towards’,l:‘Working towards’},{v:‘below’,l:‘Below expected’}];
+const subjs=['Reading','Writing','Maths','Science','MFL','Humanities','Creative subjects','DT / Practical','PE / PSHCE'];
+const lvls=[{v:'depth',l:'Greater depth'},{v:'age',l:'Age expected'},{v:'towards',l:'Working towards'},{v:'below',l:'Below expected'}];
 return`<div class="tsec" style="margin-bottom:14px">
 
 <div class="tttl">Overall Learning Level</div>
@@ -629,7 +631,7 @@ return`<div class="tsec" style="margin-bottom:14px">
 ${['Above Average','Average','Below Average','Significantly Below Average'].map(o=>`<label class="ro${gv('ll')===o?' sel':''}" style="flex:0 0 auto"><input type="radio" name="ll" value="${o}"${gv('ll')===o?' checked':''}>${o}</label>`).join('')}
 </div>
 <div style="margin-top:14px"><label style="font-size:14px;font-weight:500;display:block;margin-bottom:8px">The learning difficulties are best characterised as:</label>
-<div class="rg">${[{v:'gen',l:'General learning difficulties across all areas'},{v:'spec',l:'Specific learning difficulties (e.g. Dyslexia, Dyscalculia)'},{v:'ofac',l:'Learning delays due to other factors (e.g. health, attendance, EAL, SEMH, trauma)'},{v:'uns',l:'Not yet clear — further assessment needed'}].map(o=>`<label class="ro${gv('lt')===o.v?' sel':''}"><input type="radio" name="lt" value="${o.v}"${gv('lt')===o.v?' checked':''}>${o.l}</label>`).join('')}</div></div>
+<div class="rg">${[{v:'gen',l:'General learning difficulties across all areas'},{v:'spec',l:'Specific learning difficulties (e.g. Dyslexia, Dyscalculia)'},{v:'ofac',l:'Learning delays due to other factors (e.g. health, attendance, EAL, SEMH, trauma)'},{v:'uns',l:'Not yet clear -- further assessment needed'}].map(o=>`<label class="ro${gv('lt')===o.v?' sel':''}"><input type="radio" name="lt" value="${o.v}"${gv('lt')===o.v?' checked':''}>${o.l}</label>`).join('')}</div></div>
 </div></div>
 <div class="tsec" style="margin-bottom:14px">
 <div class="tttl">Subject Attainment</div>
@@ -651,10 +653,10 @@ ${['Above Average','Average','Below Average','Significantly Below Average'].map(
 }
 
 function rCV(){
-return`<div class="sh"><span class="sbadge">6. Student Voice</span><h2>🗣️ The Student’s Experience</h2>
+return`<div class="sh"><span class="sbadge">6. Student Voice</span><h2>🗣️ The Student's Experience</h2>
 
 <p>Capture what the student has expressed directly and what you observe through their behaviour in school.</p></div>
-<div class="sinote">💡 For students who find it difficult to express their views, describe what you observe — where they go, what engages them, what causes distress.</div>
+<div class="sinote">💡 For students who find it difficult to express their views, describe what you observe -- where they go, what engages them, what causes distress.</div>
 ${qb('cv_likes','What does the student say or show they enjoy most in school?','e.g., "loves IT", engaged in art every lesson, tells staff they enjoy science')}
 ${qb('cv_dislikes','What do they say or show they find hardest in school?','e.g., says "I hate English"; visibly distressed during writing tasks; avoids all group work')}
 ${qb('cv_school_feel','How does the student appear to feel about school generally?','e.g., arrives anxious daily, says "nobody gets me here"; settled in 1:1 but distressed in class')}
@@ -675,12 +677,12 @@ ${qb('tv_con','What are your biggest professional concerns about this student ri
 ${qb('tv_compare','How does this student\'s attainment and development compare to age-expected peers?','e.g., reading approximately 3 years behind; social and emotional development significantly below peers')}
 ${qb('tv_progress','What progress has the student made since joining the school or your class?','e.g., reading has improved with intervention; regulation has worsened significantly this year')}
 ${qb('tv_typical','How does presentation vary across the school day, week, term or across subjects?','e.g., significantly better with familiar staff; deteriorates after lunch; worse following school holidays')}
-${qb('tv_home','How does school presentation compare to what parents or carers report at home?','e.g., parents report no difficulties at home — significant discrepancy with school')}
+${qb('tv_home','How does school presentation compare to what parents or carers report at home?','e.g., parents report no difficulties at home -- significant discrepancy with school')}
 ${qb('tv_triggers','What typically triggers distress, dysregulation or avoidance in school?','e.g., any writing task, peer conflict, being called on in class, supply teacher, exam conditions')}
 ${qb('tv_strategies','What does the student respond well to in terms of strategies and adult approaches?','e.g., 1:1 pre-teaching, visual task card, advance warning of changes, low-demand start')}
 ${qb('tv_concerns_send','In your professional view, what areas of SEND does this student present with and how significant are they?','e.g., in my view significant SpLD consistent with dyslexia alongside significant anxiety')}
 ${qb('tv_next','What do you believe this student needs that school cannot provide without additional funding or specialist support?','e.g., specialist literacy teaching; intensive therapeutic support; alternative placement')}
-${qb('tv_ehcp','If applicable — why does this student need an EHCP and what would it enable?','e.g., needs substantially exceed notional SEND budget')}
+${qb('tv_ehcp','If applicable -- why does this student need an EHCP and what would it enable?','e.g., needs substantially exceed notional SEND budget')}
 ${qb('tv_risk','Are there any current risk or safeguarding concerns the EP should be aware of?','e.g., self-harm disclosed to pastoral staff; suicidal ideation reported')}
 ${qb('tv_ep','Is there anything else the EP must know before the assessment?','e.g., student presents very differently on a good day; recent significant life event')}
 ${qb('tv_collab','How would you like to work with the EP and other professionals going forward?','e.g., joint observation would be valuable; debrief meeting would help')}`;
@@ -689,7 +691,7 @@ ${qb('tv_collab','How would you like to work with the EP and other professionals
 // ── POST-16 ── with skip banner at top
 function rP16(){
 const p16=isPost16();
-return`<div class="sh"><span class="sbadge p16">Post-16</span><h2>🎓 Post-16 — Preparing for Adulthood</h2>
+return`<div class="sh"><span class="sbadge p16">Post-16</span><h2>🎓 Post-16 -- Preparing for Adulthood</h2>
 
 <p>This section is only relevant if the young person is Post-16. If they are not, please use the skip button below.</p></div>
 
@@ -698,7 +700,7 @@ ${!p16?`<div class="p16-skip">
 <h3>🎓 Is this student Post-16?</h3>
 <p>This section covers <strong>preparing for adulthood</strong> and transition planning. It is only relevant for young people aged 16 and over.<br><br>
 If this student is <strong>not Post-16</strong>, click the button below to go straight to the finish screen.</p>
-<button class="btn btskip" id="skip_p16_btn" style="max-width:320px;margin:0 auto">⏭ Skip — Student is not Post-16 →</button>
+<button class="btn btskip" id="skip_p16_btn" style="max-width:320px;margin:0 auto">⏭ Skip -- Student is not Post-16 →</button>
 <p style="margin-top:12px;font-size:13px;color:#7c3aed">Or scroll down to complete this section if they are Post-16.</p>
 </div>`:''}
 
@@ -713,7 +715,7 @@ If this student is <strong>not Post-16</strong>, click the button below to go st
 <div class="tchdr"><span class="shdr">✅ Strengths</span><span class="dhdr">⚠️ Difficulties</span></div>
 <div class="tbody">
 <div class="tcol sc">${[{id:'p16_ac1',t:'Performing well in academic subjects / chosen course'},{id:'p16_ac2',t:'Performing well in practical or vocational tasks'},{id:'p16_ac3',t:'Managing coursework and extended project work'},{id:'p16_ac4',t:'Independent study and revision'},{id:'p16_ac5',t:'Using technology effectively for learning'},{id:'p16_ac6',t:'Strong written communication skills'},{id:'p16_ac7',t:'Strong verbal communication and presentation skills'}].map(p=>`<label class="ti"><input type="checkbox" id="c_${p.id}_s"${gv(p.id+'_s')?' checked':''}><span>${p.t}</span></label>`).join('')}</div>
-<div class="tcol dc">${[{id:'p16_ac1',t:'Struggling in academic subjects — significant attainment gap'},{id:'p16_ac2',t:'Struggling with practical or vocational tasks'},{id:'p16_ac3',t:'Cannot manage extended coursework without full adult scaffolding'},{id:'p16_ac4',t:'Cannot study or revise independently'},{id:'p16_ac5',t:'Difficulty using technology reliably and independently'},{id:'p16_ac6',t:'Significant difficulty with written communication — essays, reports'},{id:'p16_ac7',t:'Significant difficulty with verbal presentations or formal speaking'}].map(p=>`<label class="ti"><input type="checkbox" id="c_${p.id}_d"${gv(p.id+'_d')?' checked':''}><span>${p.t}</span></label>`).join('')}</div>
+<div class="tcol dc">${[{id:'p16_ac1',t:'Struggling in academic subjects -- significant attainment gap'},{id:'p16_ac2',t:'Struggling with practical or vocational tasks'},{id:'p16_ac3',t:'Cannot manage extended coursework without full adult scaffolding'},{id:'p16_ac4',t:'Cannot study or revise independently'},{id:'p16_ac5',t:'Difficulty using technology reliably and independently'},{id:'p16_ac6',t:'Significant difficulty with written communication -- essays, reports'},{id:'p16_ac7',t:'Significant difficulty with verbal presentations or formal speaking'}].map(p=>`<label class="ti"><input type="checkbox" id="c_${p.id}_d"${gv(p.id+'_d')?' checked':''}><span>${p.t}</span></label>`).join('')}</div>
 </div>
 <div class="tnotes"><label>Notes:</label><textarea id="fi_p16_ac_notes" placeholder="e.g., producing BTEC assignments independently is impossible without 1:1 support at every stage...">${esc(gv('p16_ac_notes'))}</textarea></div>
 </div>
@@ -724,9 +726,9 @@ If this student is <strong>not Post-16</strong>, click the button below to go st
 <div class="tchdr"><span class="shdr">✅ Strengths</span><span class="dhdr">⚠️ Difficulties</span></div>
 <div class="tbody">
 <div class="tcol sc">${[{id:'p16_org1',t:'Manages deadlines and submits work on time'},{id:'p16_org2',t:'Organises materials, equipment and learning resources'},{id:'p16_org3',t:'Manages their own timetable and commitments independently'},{id:'p16_org4',t:'Plans and breaks down longer tasks independently'},{id:'p16_org5',t:'Asks for help appropriately and self-advocates for support'},{id:'p16_org6',t:'Manages money and basic financial tasks (travel, lunch)'}].map(p=>`<label class="ti"><input type="checkbox" id="c_${p.id}_s"${gv(p.id+'_s')?' checked':''}><span>${p.t}</span></label>`).join('')}</div>
-<div class="tcol dc">${[{id:'p16_org1',t:'Consistently misses deadlines — significant time management difficulties'},{id:'p16_org2',t:'Consistently loses or forgets materials — extremely disorganised'},{id:'p16_org3',t:'Cannot manage their own timetable without adult support'},{id:'p16_org4',t:'Cannot plan or structure longer pieces of work independently'},{id:'p16_org5',t:'Does not ask for help or communicate needs — avoids disclosure'},{id:'p16_org6',t:'Significant difficulty managing money or basic financial tasks'}].map(p=>`<label class="ti"><input type="checkbox" id="c_${p.id}_d"${gv(p.id+'_d')?' checked':''}><span>${p.t}</span></label>`).join('')}</div>
+<div class="tcol dc">${[{id:'p16_org1',t:'Consistently misses deadlines -- significant time management difficulties'},{id:'p16_org2',t:'Consistently loses or forgets materials -- extremely disorganised'},{id:'p16_org3',t:'Cannot manage their own timetable without adult support'},{id:'p16_org4',t:'Cannot plan or structure longer pieces of work independently'},{id:'p16_org5',t:'Does not ask for help or communicate needs -- avoids disclosure'},{id:'p16_org6',t:'Significant difficulty managing money or basic financial tasks'}].map(p=>`<label class="ti"><input type="checkbox" id="c_${p.id}_d"${gv(p.id+'_d')?' checked':''}><span>${p.t}</span></label>`).join('')}</div>
 </div>
-<div class="tnotes"><label>Notes:</label><textarea id="fi_p16_org_notes" placeholder="e.g., cannot attend college independently — relies on parent for travel...">${esc(gv('p16_org_notes'))}</textarea></div>
+<div class="tnotes"><label>Notes:</label><textarea id="fi_p16_org_notes" placeholder="e.g., cannot attend college independently -- relies on parent for travel...">${esc(gv('p16_org_notes'))}</textarea></div>
 </div>
 
 <div class="sh" style="margin-top:20px"><span class="sbadge p16">P16-3</span><h2 style="font-size:18px">3. Preparing for Employment</h2></div>
@@ -741,7 +743,7 @@ ${qb('p16_emp_support','What vocational support or work experience is currently 
 <div class="tchdr"><span class="shdr">✅ Can do independently</span><span class="dhdr">⚠️ Needs support with</span></div>
 <div class="tbody">
 <div class="tcol sc">${[{id:'p16_il1',t:'Travels to school / college independently'},{id:'p16_il2',t:'Manages personal hygiene and self-care independently'},{id:'p16_il3',t:'Manages meals and basic food preparation'},{id:'p16_il4',t:'Manages medication independently'},{id:'p16_il5',t:'Manages money and purchases independently'},{id:'p16_il6',t:'Uses technology safely and independently'},{id:'p16_il7',t:'Keeps appointments and manages own schedule'}].map(p=>`<label class="ti"><input type="checkbox" id="c_${p.id}_s"${gv(p.id+'_s')?' checked':''}><span>${p.t}</span></label>`).join('')}</div>
-<div class="tcol dc">${[{id:'p16_il1',t:'Cannot travel independently — requires adult escort'},{id:'p16_il2',t:'Requires prompting or support for personal hygiene / self-care'},{id:'p16_il3',t:'Cannot manage meals or food preparation independently'},{id:'p16_il4',t:'Requires adult support to manage medication'},{id:'p16_il5',t:'Cannot manage money or make purchases independently'},{id:'p16_il6',t:'Unsafe or unable to use technology independently'},{id:'p16_il7',t:'Cannot keep appointments or manage own schedule without support'}].map(p=>`<label class="ti"><input type="checkbox" id="c_${p.id}_d"${gv(p.id+'_d')?' checked':''}><span>${p.t}</span></label>`).join('')}</div>
+<div class="tcol dc">${[{id:'p16_il1',t:'Cannot travel independently -- requires adult escort'},{id:'p16_il2',t:'Requires prompting or support for personal hygiene / self-care'},{id:'p16_il3',t:'Cannot manage meals or food preparation independently'},{id:'p16_il4',t:'Requires adult support to manage medication'},{id:'p16_il5',t:'Cannot manage money or make purchases independently'},{id:'p16_il6',t:'Unsafe or unable to use technology independently'},{id:'p16_il7',t:'Cannot keep appointments or manage own schedule without support'}].map(p=>`<label class="ti"><input type="checkbox" id="c_${p.id}_d"${gv(p.id+'_d')?' checked':''}><span>${p.t}</span></label>`).join('')}</div>
 </div>
 <div class="tnotes"><label>Notes:</label><textarea id="fi_p16_il_notes" placeholder="e.g., travels to college independently by bus but gets lost if route changes...">${esc(gv('p16_il_notes'))}</textarea></div>
 </div>
@@ -763,11 +765,11 @@ ${qb('p16_fe_support','What support will they need in further education or train
 
 <div class="sh" style="margin-top:20px"><span class="sbadge p16">P16-8</span><h2 style="font-size:18px">8. Transition Planning &amp; EHCP Outcomes</h2></div>
 ${qb('p16_transition_current','What transition planning is currently in place?','e.g., EHC review this term focused on adulthood outcomes; careers advisor involved; family involved')}
-${qb('p16_outcomes_emp','Desired outcome — Employment:','e.g., identify a realistic employment pathway; complete a supported work placement')}
-${qb('p16_outcomes_il','Desired outcome — Independent Living:','e.g., travel independently to a new location; manage a weekly budget')}
-${qb('p16_outcomes_comm','Desired outcome — Community Inclusion:','e.g., access community activities independently; maintain at least one peer friendship outside school')}
-${qb('p16_outcomes_health','Desired outcome — Health:','e.g., manage their own medication; access adult mental health services independently')}
-${qb('p16_outcomes_fe','Desired outcome — Further Education / Training:','e.g., access a Level 2 qualification; complete a supported internship')}
+${qb('p16_outcomes_emp','Desired outcome -- Employment:','e.g., identify a realistic employment pathway; complete a supported work placement')}
+${qb('p16_outcomes_il','Desired outcome -- Independent Living:','e.g., travel independently to a new location; manage a weekly budget')}
+${qb('p16_outcomes_comm','Desired outcome -- Community Inclusion:','e.g., access community activities independently; maintain at least one peer friendship outside school')}
+${qb('p16_outcomes_health','Desired outcome -- Health:','e.g., manage their own medication; access adult mental health services independently')}
+${qb('p16_outcomes_fe','Desired outcome -- Further Education / Training:','e.g., access a Level 2 qualification; complete a supported internship')}
 ${qb('p16_any_other','Anything else the EP should know about Post-16 needs and transition?','e.g., family have significant concerns about adult services transition; EHC review is overdue')}`;
 }
 
@@ -780,17 +782,17 @@ function rDone(){
 return`<div class="dw"><div class="dc">
 
 <div style="font-size:52px;margin-bottom:14px">✅</div>
-<h2>Questionnaire complete — thank you!</h2>
+<h2>Questionnaire complete -- thank you!</h2>
 <p style="margin-bottom:14px">Your completed report is shown below. Use the buttons to copy or download it, then paste or attach it in an email to your EP.</p>
 <div style="background:#eaf4f2;border:1.5px solid var(--teal);border-radius:12px;padding:16px 18px;margin-bottom:14px;text-align:left">
-  <strong style="display:block;font-size:13px;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Step 1 — Get the report</strong>
+  <strong style="display:block;font-size:13px;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Step 1 -- Get the report</strong>
   <button class="btn bte" id="bcp" style="margin-bottom:8px">📋 Copy report to clipboard</button>
   <button class="btn bts" id="b_dl" style="margin-bottom:0;font-size:13px">⬇️ Download report as .txt file</button>
   <div id="copy_confirm" style="display:none;background:#dcfce7;border:1.5px solid #4ade80;border-radius:8px;padding:10px 14px;font-size:13px;color:#166534;margin-top:8px">✓ Copied! Now open your email app, create a new email to your EP, and paste (Ctrl+V / Cmd+V).</div>
 </div>
 <div style="background:#f5f0ff;border:1.5px solid #a78bfa;border-radius:12px;padding:16px 18px;margin-bottom:14px;text-align:left">
-  <strong style="display:block;font-size:13px;color:#7c3aed;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Step 2 — Email to your EP</strong>
-  <p style="font-size:13px;color:#4b3a7a;margin-bottom:0">Open your email app, create a new message to your EP, paste the report into the body, and send. Subject line suggestion: <em>EP Teacher Questionnaire (Secondary) — [Student name]</em></p>
+  <strong style="display:block;font-size:13px;color:#7c3aed;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Step 2 -- Email to your EP</strong>
+  <p style="font-size:13px;color:#4b3a7a;margin-bottom:0">Open your email app, create a new message to your EP, paste the report into the body, and send. Subject line suggestion: <em>EP Teacher Questionnaire (Secondary) -- [Student name]</em></p>
 </div>
 <div style="background:#fffbf0;border:1.5px solid #e8c96a;border-radius:12px;padding:16px 18px;margin-bottom:14px;text-align:left">
   <strong style="display:block;font-size:13px;color:var(--amber);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Save your progress</strong>
@@ -806,118 +808,118 @@ return`<div class="dw"><div class="dc">
 
 function bDone(){
 const rep=bRep();
-const rp=document.getElementById(‘rp’);
+const rp=document.getElementById('rp');
 if(rp)rp.value=rep;
 
 // Copy to clipboard
-document.getElementById(‘bcp’).onclick=()=>{
-const conf=document.getElementById(‘copy_confirm’);
-const btn=document.getElementById(‘bcp’);
+document.getElementById('bcp').onclick=()=>{
+const conf=document.getElementById('copy_confirm');
+const btn=document.getElementById('bcp');
 if(navigator.clipboard&&navigator.clipboard.writeText){
 navigator.clipboard.writeText(rep).then(()=>{
-conf.style.display=‘block’;
-btn.textContent=‘✓ Copied!’;
-setTimeout(()=>{conf.style.display=‘none’;btn.textContent=‘📋 Copy report to clipboard’;},4000);
+conf.style.display='block';
+btn.textContent='✓ Copied!';
+setTimeout(()=>{conf.style.display='none';btn.textContent='📋 Copy report to clipboard';},4000);
 }).catch(()=>fallbackCopy());
 } else { fallbackCopy(); }
 function fallbackCopy(){
 if(rp){rp.select();rp.setSelectionRange(0,99999);}
-try{document.execCommand(‘copy’);
-conf.style.display=‘block’;
-btn.textContent=‘✓ Copied!’;
-setTimeout(()=>{conf.style.display=‘none’;btn.textContent=‘📋 Copy report to clipboard’;},4000);
+try{document.execCommand('copy');
+conf.style.display='block';
+btn.textContent='✓ Copied!';
+setTimeout(()=>{conf.style.display='none';btn.textContent='📋 Copy report to clipboard';},4000);
 }catch(e){
-conf.textContent=‘Could not copy automatically — please click inside the report box below, press Ctrl+A then Ctrl+C to copy.’;
-conf.style.background=’#fef9c3’;conf.style.borderColor=’#fde68a’;conf.style.color=’#78350f’;
-conf.style.display=‘block’;
+conf.textContent='Could not copy automatically -- please click inside the report box below, press Ctrl+A then Ctrl+C to copy.';
+conf.style.background='#fef9c3';conf.style.borderColor='#fde68a';conf.style.color='#78350f';
+conf.style.display='block';
 }
 }
 };
 
 // Download as .txt file
-document.getElementById(‘b_dl’).onclick=()=>{
-const child=(gv(‘child_forename’)+’ ‘+gv(‘child_surname’)).trim().replace(/\s+/g,’*’)||‘Student’;
-const blob=new Blob([rep],{type:‘text/plain’});
+document.getElementById('b_dl').onclick=()=>{
+const child=(gv('child_forename')+' '+gv('child_surname')).trim().replace(/\s+/g,'*')||'Student';
+const blob=new Blob([rep],{type:'text/plain'});
 const url=URL.createObjectURL(blob);
-const a=document.createElement(‘a’);
-a.href=url;a.download=’EP_Questionnaire*’+child+’.txt’;
+const a=document.createElement('a');
+a.href=url;a.download='EP_Questionnaire*'+child+'.txt';
 document.body.appendChild(a);a.click();
 document.body.removeChild(a);URL.revokeObjectURL(url);
 };
 
 // Save progress
-document.getElementById(‘b_export2’).onclick=()=>exportSave();
+document.getElementById('b_export2').onclick=()=>exportSave();
 
-document.getElementById(‘bbk’).onclick=()=>{ST.phase=‘form’;ST.si=SECS.length-1;render();};
+document.getElementById('bbk').onclick=()=>{ST.phase='form';ST.si=SECS.length-1;render();};
 }
 
 // ── REPORT BUILDER ────────────────────────────────────────────────────────────
 function bRep(){
 const d=ST.d;
-const g=k=>d[k]||‘Not provided’;
-const today=new Date().toLocaleDateString(‘en-GB’,{day:‘numeric’,month:‘long’,year:‘numeric’});
+const g=k=>d[k]||'Not provided';
+const today=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
 const p16done=isPost16();
 
-let r=`EP ASSESSMENT QUESTIONNAIRE — SECONDARY & POST-16
+let r=`EP ASSESSMENT QUESTIONNAIRE -- SECONDARY & POST-16
 TEACHER / SCHOOL CONTRIBUTION
-Date completed: ${g(‘form_date’)||today}
+Date completed: ${g('form_date')||today}
 © 2026 POPS
 
 ══════════════════════════════════════════
 SCHOOL & STUDENT DETAILS
 ══════════════════════════════════════════
-Student: ${g(‘child_forename’)} ${g(‘child_surname’)}
-Date of Birth: ${g(‘dob’)}  |  Year Group: ${g(‘year_group’)}
-School / College: ${g(‘school’)}
-Gender: ${g(‘gender’)}  |  Home Language(s): ${g(‘home_language’)}
-Time at school: ${g(‘time_in_setting’)}  |  FSM/PP: ${g(‘pp’)}
-Completed by: ${g(‘your_name’)} (${g(‘role’)})
-SENCO: ${g(‘senco’)}
-Email: ${g(‘setting_email’)}  |  Phone: ${g(‘setting_phone’)}
+Student: ${g('child_forename')} ${g('child_surname')}
+Date of Birth: ${g('dob')}  |  Year Group: ${g('year_group')}
+School / College: ${g('school')}
+Gender: ${g('gender')}  |  Home Language(s): ${g('home_language')}
+Time at school: ${g('time_in_setting')}  |  FSM/PP: ${g('pp')}
+Completed by: ${g('your_name')} (${g('role')})
+SENCO: ${g('senco')}
+Email: ${g('setting_email')}  |  Phone: ${g('setting_phone')}
 
 ══════════════════════════════════════════
 BACKGROUND & CONTEXT
 ══════════════════════════════════════════
-Ongoing investigations: ${g(‘bg_ong’)}${d.bg_ong_detail?’ — ‘+d.bg_ong_detail:’’}
-Development / primary history: ${g(‘bg_dev’)}
-Social care involvement: ${g(‘bg_sc’)}${d.bg_sc_detail?’ — ‘+d.bg_sc_detail:’’}
-Previous schools: ${g(‘bg_schls’)}
-Cultural/family context: ${g(‘bg_ctx’)}
+Ongoing investigations: ${g('bg_ong')}${d.bg_ong_detail?' -- '+d.bg_ong_detail:''}
+Development / primary history: ${g('bg_dev')}
+Social care involvement: ${g('bg_sc')}${d.bg_sc_detail?' -- '+d.bg_sc_detail:''}
+Previous schools: ${g('bg_schls')}
+Cultural/family context: ${g('bg_ctx')}
 
 ══════════════════════════════════════════
 ATTENDANCE
 ══════════════════════════════════════════
-Sessions possible: ${g(‘att_possible’)}  |  Attended: ${g(‘att_attended’)}  |  Attendance: ${g(‘att_pct’)}%
-Last year: ${g(‘att_lastyear’)}
-Authorised: ${g(‘att_auth’)}
-Unauthorised: ${g(‘att_unauth’)}
-Patterns: ${g(‘att_pattern’)}
-School refusal: ${g(‘att_refusal’)}${d.att_refusal_detail?’ — ‘+d.att_refusal_detail:’’}
-Impact: ${g(‘att_impact’)}
-Action taken: ${g(‘att_action’)}
+Sessions possible: ${g('att_possible')}  |  Attended: ${g('att_attended')}  |  Attendance: ${g('att_pct')}%
+Last year: ${g('att_lastyear')}
+Authorised: ${g('att_auth')}
+Unauthorised: ${g('att_unauth')}
+Patterns: ${g('att_pattern')}
+School refusal: ${g('att_refusal')}${d.att_refusal_detail?' -- '+d.att_refusal_detail:''}
+Impact: ${g('att_impact')}
+Action taken: ${g('att_action')}
 
 ══════════════════════════════════════════
 SUPPORT CURRENTLY IN PLACE
 ══════════════════════════════════════════
-EHCP: ${g(‘ehcp’)}
-SEND Support Plan: ${g(‘iep’)}${d.iep_detail?’ — ‘+d.iep_detail:’’}
-TA support: ${g(‘sup_ta’)}
-Interventions: ${g(‘sup_int’)}
-Pastoral/SEMH: ${g(‘sup_pastoral’)}
-CAMHS/mental health: ${g(‘sup_camhs’)}
-SALT: ${g(‘sup_salt’)}
-OT: ${g(‘sup_ot’)}
-Other professionals: ${g(‘sup_ext’)}
-Adaptations: ${g(‘sup_env’)}
-Exam access arrangements: ${g(‘sup_eaa’)}
-What has worked: ${g(‘sup_worked’)}
-What has not worked: ${g(‘sup_notworked’)}
-Needs beyond current provision: ${g(‘sup_gaps’)}
+EHCP: ${g('ehcp')}
+SEND Support Plan: ${g('iep')}${d.iep_detail?' -- '+d.iep_detail:''}
+TA support: ${g('sup_ta')}
+Interventions: ${g('sup_int')}
+Pastoral/SEMH: ${g('sup_pastoral')}
+CAMHS/mental health: ${g('sup_camhs')}
+SALT: ${g('sup_salt')}
+OT: ${g('sup_ot')}
+Other professionals: ${g('sup_ext')}
+Adaptations: ${g('sup_env')}
+Exam access arrangements: ${g('sup_eaa')}
+What has worked: ${g('sup_worked')}
+What has not worked: ${g('sup_notworked')}
+Needs beyond current provision: ${g('sup_gaps')}
 
 ══════════════════════════════════════════
 MAIN CONCERNS (PRIORITY ORDER)
 ══════════════════════════════════════════
-`; [{id:'pr_cog',l:'Cognition & Learning'},{id:'pr_com',l:'Communication & Interaction'},{id:'pr_sem',l:'SEMH'},{id:'pr_phy',l:'Physical & Sensory'},{id:'pr_hlt',l:'Health'}] .forEach(a=>{if(d[a.id])r+=`[✓] ${a.l}${d[a.id+’_p’]?’ — Priority: ‘+d[a.id+’_p’]:’’}\n`;}); if(d.pr_other)r+=`Other: ${d.pr_other}\n`;
+`; [{id:'pr_cog',l:'Cognition & Learning'},{id:'pr_com',l:'Communication & Interaction'},{id:'pr_sem',l:'SEMH'},{id:'pr_phy',l:'Physical & Sensory'},{id:'pr_hlt',l:'Health'}] .forEach(a=>{if(d[a.id])r+=`[✓] ${a.l}${d[a.id+'_p']?' -- Priority: '+d[a.id+'_p']:''}\n`;}); if(d.pr_other)r+=`Other: ${d.pr_other}\n`;
 
 function addSec(title,subs){
 r+=`\n══════════════════════════════════════════\n${title}\n══════════════════════════════════════════\n`;
@@ -925,11 +927,11 @@ subs.forEach(sub=>{
 if(sub.special)return;
 let str=[],dif=[];
 sub.ps.forEach(p=>{
-if(d[p.id+’_s’])str.push(`  • ${p.s}`);
-if(d[p.id+’_d’]){
+if(d[p.id+'_s'])str.push(`  • ${p.s}`);
+if(d[p.id+'_d']){
 let dl=`  • ${p.d}`;
-if(d[p.id+’_imp’])dl+=`\n      In school: ${d[p.id+'_imp']}`;
-if(d[p.id+’_sup’])dl+=`\n      Strategies/impact: ${d[p.id+'_sup']}`;
+if(d[p.id+'_imp'])dl+=`\n      In school: ${d[p.id+'_imp']}`;
+if(d[p.id+'_sup'])dl+=`\n      Strategies/impact: ${d[p.id+'_sup']}`;
 dif.push(dl);
 }
 });
@@ -942,108 +944,108 @@ if(d[sub.n])r+=`\nNotes: ${d[sub.n]}\n`;
 });
 }
 
-addSec(‘A. PHYSICAL & SENSORY’,TDATA.phy);
-r+=’\nDesired Outcomes — Physical & Sensory:\n’;
-OUTS.phy.forEach(o=>{if(d[o.id])r+=`  ${o.l.split('—')[0].trim()}: ${d[o.id]}\n`;});
-addSec(‘B. COMMUNICATION & INTERACTION’,TDATA.com);
-r+=’\nDesired Outcomes — Communication:\n’;
-OUTS.com.forEach(o=>{if(d[o.id])r+=`  ${o.l.split('—')[0].trim()}: ${d[o.id]}\n`;});
-addSec(‘C. SOCIAL, EMOTIONAL & MENTAL HEALTH’,TDATA.sem);
-r+=’\nDesired Outcomes — SEMH:\n’;
-OUTS.sem.forEach(o=>{if(d[o.id])r+=`  ${o.l.split('—')[0].trim()}: ${d[o.id]}\n`;});
+addSec('A. PHYSICAL & SENSORY',TDATA.phy);
+r+='\nDesired Outcomes -- Physical & Sensory:\n';
+OUTS.phy.forEach(o=>{if(d[o.id])r+=`  ${o.l.split('--')[0].trim()}: ${d[o.id]}\n`;});
+addSec('B. COMMUNICATION & INTERACTION',TDATA.com);
+r+='\nDesired Outcomes -- Communication:\n';
+OUTS.com.forEach(o=>{if(d[o.id])r+=`  ${o.l.split('--')[0].trim()}: ${d[o.id]}\n`;});
+addSec('C. SOCIAL, EMOTIONAL & MENTAL HEALTH',TDATA.sem);
+r+='\nDesired Outcomes -- SEMH:\n';
+OUTS.sem.forEach(o=>{if(d[o.id])r+=`  ${o.l.split('--')[0].trim()}: ${d[o.id]}\n`;});
 
-r+=`\n══════════════════════════════════════════\nD. COGNITION & LEARNING — SECONDARY KS3/KS4\n══════════════════════════════════════════\n`;
+r+=`\n══════════════════════════════════════════\nD. COGNITION & LEARNING -- SECONDARY KS3/KS4\n══════════════════════════════════════════\n`;
 r+=`Overall level: ${g('ll')}\nLearning difficulties: ${g('lt')}\nReading Age: ${g('ra')}  |  Maths Age: ${g('ma')}\nStandardised scores: ${g('std_scores')}\nGCSE grades/predictions: ${g('gcse')}\n\nSubject Attainment:\n`;
-[‘Reading’,‘Writing’,‘Maths’,‘Science’,‘MFL’,‘Humanities’,‘Creative subjects’,‘DT / Practical’,‘PE / PSHCE’].forEach(s=>{
-const k=‘at_’+s.replace(/\W/g,’_’).toLowerCase();
-if(d[k]){const ll={depth:‘Greater depth’,age:‘Age expected’,towards:‘Working towards’,below:‘Below expected’};r+=`  ${s}: ${ll[d[k]]||d[k]}${d[k+'_y']?' (Year '+d[k+'_y']+')':''}\n`;}
+['Reading','Writing','Maths','Science','MFL','Humanities','Creative subjects','DT / Practical','PE / PSHCE'].forEach(s=>{
+const k='at_'+s.replace(/\W/g,'_').toLowerCase();
+if(d[k]){const ll={depth:'Greater depth',age:'Age expected',towards:'Working towards',below:'Below expected'};r+=`  ${s}: ${ll[d[k]]||d[k]}${d[k+'_y']?' (Year '+d[k+'_y']+')':''}\n`;}
 });
-addSec(‘D — Subsections’,TDATA.cog.filter(s=>!s.special));
-r+=’\nDesired Outcomes — Learning:\n’;
-OUTS.cog.forEach(o=>{if(d[o.id])r+=`  ${o.l.split('—')[0].trim()}: ${d[o.id]}\n`;});
+addSec('D -- Subsections',TDATA.cog.filter(s=>!s.special));
+r+='\nDesired Outcomes -- Learning:\n';
+OUTS.cog.forEach(o=>{if(d[o.id])r+=`  ${o.l.split('--')[0].trim()}: ${d[o.id]}\n`;});
 
 r+=`\n══════════════════════════════════════════\nSTUDENT VOICE (STAFF-OBSERVED)\n══════════════════════════════════════════\n`;
-[[‘cv_likes’,‘Enjoys in school’],[‘cv_dislikes’,‘Finds hardest’],[‘cv_school_feel’,‘Feels about school’],[‘cv_friends’,‘Friendships/peers’],[‘cv_strengths’,‘Strengths/pride’],[‘cv_hard’,‘Hardest thing’],[‘cv_help’,‘Help sought/responds to’],[‘cv_future’,‘Future hopes/motivators’],[‘cv_school_view’,‘Views on whether school understands needs’]].forEach(([k,l])=>{if(d[k])r+=`${l}: ${d[k]}\n`;});
+[['cv_likes','Enjoys in school'],['cv_dislikes','Finds hardest'],['cv_school_feel','Feels about school'],['cv_friends','Friendships/peers'],['cv_strengths','Strengths/pride'],['cv_hard','Hardest thing'],['cv_help','Help sought/responds to'],['cv_future','Future hopes/motivators'],['cv_school_view','Views on whether school understands needs']].forEach(([k,l])=>{if(d[k])r+=`${l}: ${d[k]}\n`;});
 
 r+=`\n══════════════════════════════════════════\nSTAFF PROFESSIONAL VIEWS\n══════════════════════════════════════════\n`;
-[[‘tv_str’,‘Strengths and progress’],[‘tv_con’,‘Main concerns’],[‘tv_compare’,‘Comparison to age-expected’],[‘tv_progress’,‘Progress over time’],[‘tv_typical’,‘Variation in presentation’],[‘tv_home’,‘School vs home presentation’],[‘tv_triggers’,‘Triggers’],[‘tv_strategies’,‘Effective strategies’],[‘tv_concerns_send’,‘Professional SEND view’],[‘tv_next’,‘Needs beyond current provision’],[‘tv_ehcp’,‘EHCP rationale’],[‘tv_risk’,‘Risk / safeguarding’],[‘tv_ep’,‘Important for EP before assessment’],[‘tv_collab’,‘Collaborative working preferences’]].forEach(([k,l])=>{if(d[k])r+=`${l}: ${d[k]}\n`;});
+[['tv_str','Strengths and progress'],['tv_con','Main concerns'],['tv_compare','Comparison to age-expected'],['tv_progress','Progress over time'],['tv_typical','Variation in presentation'],['tv_home','School vs home presentation'],['tv_triggers','Triggers'],['tv_strategies','Effective strategies'],['tv_concerns_send','Professional SEND view'],['tv_next','Needs beyond current provision'],['tv_ehcp','EHCP rationale'],['tv_risk','Risk / safeguarding'],['tv_ep','Important for EP before assessment'],['tv_collab','Collaborative working preferences']].forEach(([k,l])=>{if(d[k])r+=`${l}: ${d[k]}\n`;});
 
 if(p16done){
-r+=`\n══════════════════════════════════════════\nPOST-16 — PREPARING FOR ADULTHOOD\n══════════════════════════════════════════\n`;
+r+=`\n══════════════════════════════════════════\nPOST-16 -- PREPARING FOR ADULTHOOD\n══════════════════════════════════════════\n`;
 r+=`Current course/provision: ${g('p16_course')}\n\n`;
-[[‘p16_emp_aspire’,‘Employment aspirations’],[‘p16_emp_skills’,‘Work-related skills’],[‘p16_emp_barriers’,‘Barriers to employment’],[‘p16_emp_support’,‘Vocational support in place’]].forEach(([k,l])=>{if(d[k])r+=`${l}: ${d[k]}\n`;});
-r+=’\nIndependent Living:\n’;
-const ilLabels=[‘Travels independently’,‘Personal hygiene/self-care’,‘Meals/food prep’,‘Medication’,‘Money/purchases’,‘Technology safety’,‘Appointments/schedule’];
+[['p16_emp_aspire','Employment aspirations'],['p16_emp_skills','Work-related skills'],['p16_emp_barriers','Barriers to employment'],['p16_emp_support','Vocational support in place']].forEach(([k,l])=>{if(d[k])r+=`${l}: ${d[k]}\n`;});
+r+='\nIndependent Living:\n';
+const ilLabels=['Travels independently','Personal hygiene/self-care','Meals/food prep','Medication','Money/purchases','Technology safety','Appointments/schedule'];
 ilLabels.forEach((lbl,i)=>{
 const k=`p16_il${i+1}`;
-if(d[k+’_s’])r+=`  ✓ Can: ${lbl}\n`;
-if(d[k+’_d’])r+=`  ✗ Needs support: ${lbl}\n`;
+if(d[k+'_s'])r+=`  ✓ Can: ${lbl}\n`;
+if(d[k+'_d'])r+=`  ✗ Needs support: ${lbl}\n`;
 });
 if(d.p16_il_notes)r+=`Notes: ${d.p16_il_notes}\n`;
-[[‘p16_community’,‘Community participation’],[‘p16_relationships’,‘Relationships outside school’],[‘p16_safety’,‘Community safety’],[‘p16_health’,‘Health/wellbeing concerns’],[‘p16_health_manage’,‘Self-management of health’],[‘p16_transition_health’,‘Health transition to adult services’],[‘p16_fe_plans’,‘FE/training plans’],[‘p16_fe_barriers’,‘FE/training barriers’],[‘p16_fe_support’,‘Support needed in FE’],[‘p16_transition_current’,‘Transition planning in place’],[‘p16_outcomes_emp’,‘Outcome — Employment’],[‘p16_outcomes_il’,‘Outcome — Independent Living’],[‘p16_outcomes_comm’,‘Outcome — Community Inclusion’],[‘p16_outcomes_health’,‘Outcome — Health’],[‘p16_outcomes_fe’,‘Outcome — Further Education/Training’],[‘p16_any_other’,‘Other Post-16 information’]].forEach(([k,l])=>{if(d[k])r+=`${l}: ${d[k]}\n`;});
+[['p16_community','Community participation'],['p16_relationships','Relationships outside school'],['p16_safety','Community safety'],['p16_health','Health/wellbeing concerns'],['p16_health_manage','Self-management of health'],['p16_transition_health','Health transition to adult services'],['p16_fe_plans','FE/training plans'],['p16_fe_barriers','FE/training barriers'],['p16_fe_support','Support needed in FE'],['p16_transition_current','Transition planning in place'],['p16_outcomes_emp','Outcome -- Employment'],['p16_outcomes_il','Outcome -- Independent Living'],['p16_outcomes_comm','Outcome -- Community Inclusion'],['p16_outcomes_health','Outcome -- Health'],['p16_outcomes_fe','Outcome -- Further Education/Training'],['p16_any_other','Other Post-16 information']].forEach(([k,l])=>{if(d[k])r+=`${l}: ${d[k]}\n`;});
 } else {
-r+=`\n══════════════════════════════════════════\nPOST-16 SECTION\n══════════════════════════════════════════\nNot applicable — student is not Post-16.\n`;
+r+=`\n══════════════════════════════════════════\nPOST-16 SECTION\n══════════════════════════════════════════\nNot applicable -- student is not Post-16.\n`;
 }
 return r;
 }
 
 // ── BINDINGS ──────────────────────────────────────────────────────────────────
 function bForm(){
-document.querySelectorAll(’.npill’).forEach(p=>p.addEventListener(‘click’,()=>{cAll();ST.si=parseInt(p.dataset.i);render();}));
-const bb=document.getElementById(‘bb’),bn=document.getElementById(‘bn’),bf=document.getElementById(‘bf’);
-if(bb)bb.onclick=()=>{cAll();ST.si–;render();}; // FIX 1: was ST.si– (en-dash) — now correct decrement operator
+document.querySelectorAll('.npill').forEach(p=>p.addEventListener('click',()=>{cAll();ST.si=parseInt(p.dataset.i);render();}));
+const bb=document.getElementById('bb'),bn=document.getElementById('bn'),bf=document.getElementById('bf');
+if(bb)bb.onclick=()=>{cAll();ST.si--;render();}; // FIX 1: was ST.si-- (en-dash) -- now correct decrement operator
 if(bn)bn.onclick=()=>{cAll();ST.si++;render();};
-if(bf)bf.onclick=()=>{cAll();ST.phase=‘done’;render();};
+if(bf)bf.onclick=()=>{cAll();ST.phase='done';render();};
 
 // Skip Post-16 button
-const skipBtn=document.getElementById(‘skip_p16_btn’);
-if(skipBtn)skipBtn.onclick=()=>{cAll();ST.phase=‘done’;render();};
+const skipBtn=document.getElementById('skip_p16_btn');
+if(skipBtn)skipBtn.onclick=()=>{cAll();ST.phase='done';render();};
 
-document.querySelectorAll(‘input[type=checkbox]’).forEach(cb=>{
-cb.addEventListener(‘change’,()=>{
-// FIX 2: was cb.id.endsWith(’*d’) and ’dx*’+base — asterisks replaced with underscores
-if(cb.id.startsWith(‘c_’)&&cb.id.endsWith(’*d’)){
+document.querySelectorAll('input[type=checkbox]').forEach(cb=>{
+cb.addEventListener('change',()=>{
+// FIX 2: was cb.id.endsWith('_d') and 'dx*'+base -- asterisks replaced with underscores
+if(cb.id.startsWith('c_')&&cb.id.endsWith('_d')){
 const base=cb.id.slice(2,-2);
-const ex=document.getElementById(’dx*’+base);
-if(ex)ex.classList.toggle(‘open’,cb.checked);
+const ex=document.getElementById('dx_'+base);
+if(ex)ex.classList.toggle('open',cb.checked);
 }
-const co=cb.closest(’.co’);if(co)co.classList.toggle(‘sel’,cb.checked);
+const co=cb.closest('.co');if(co)co.classList.toggle('sel',cb.checked);
 cAll();
 });
 });
 
-document.querySelectorAll(‘input[type=radio]’).forEach(r=>{
-r.addEventListener(‘change’,()=>{
-document.querySelectorAll(`input[name="${r.name}"]`).forEach(x=>{const p=x.closest(’.ro’);if(p)p.classList.toggle(‘sel’,x.checked);});
-if(r.name===‘bg_ong’){const w=document.getElementById(‘bg_ong_d’);if(w)w.style.display=r.value===‘Yes’?’’:‘none’;}
-if(r.name===‘bg_sc’){const w=document.getElementById(‘bg_sc_d’);if(w)w.style.display=r.value===‘Yes’?’’:‘none’;}
-if(r.name===‘iep’){const w=document.getElementById(‘iep_d’);if(w)w.style.display=r.value===‘Yes’?’’:‘none’;}
+document.querySelectorAll('input[type=radio]').forEach(r=>{
+r.addEventListener('change',()=>{
+document.querySelectorAll(`input[name="${r.name}"]`).forEach(x=>{const p=x.closest('.ro');if(p)p.classList.toggle('sel',x.checked);});
+if(r.name==='bg_ong'){const w=document.getElementById('bg_ong_d');if(w)w.style.display=r.value==='Yes'?'':'none';}
+if(r.name==='bg_sc'){const w=document.getElementById('bg_sc_d');if(w)w.style.display=r.value==='Yes'?'':'none';}
+if(r.name==='iep'){const w=document.getElementById('iep_d');if(w)w.style.display=r.value==='Yes'?'':'none';}
 cAll();
 });
 });
 
-document.querySelectorAll(‘input[type=number]’).forEach(el=>{
-el.addEventListener(‘input’,()=>{
-const pos=parseFloat(document.getElementById(‘fi_att_possible’)?.value)||0;
-const att=parseFloat(document.getElementById(‘fi_att_attended’)?.value)||0;
-if(pos>0&&att>0&&el.id!==‘fi_att_pct’){
+document.querySelectorAll('input[type=number]').forEach(el=>{
+el.addEventListener('input',()=>{
+const pos=parseFloat(document.getElementById('fi_att_possible')?.value)||0;
+const att=parseFloat(document.getElementById('fi_att_attended')?.value)||0;
+if(pos>0&&att>0&&el.id!=='fi_att_pct'){
 const pct=Math.round(att/pos*100);
-const pi=document.getElementById(‘fi_att_pct’);
-if(pi){pi.value=pct;sv(‘att_pct’,pct);}
+const pi=document.getElementById('fi_att_pct');
+if(pi){pi.value=pct;sv('att_pct',pct);}
 }
 cAll();
 });
 });
 
-document.querySelectorAll(‘input,textarea,select’).forEach(el=>{el.addEventListener(‘input’,cAll);el.addEventListener(‘change’,cAll);});
+document.querySelectorAll('input,textarea,select').forEach(el=>{el.addEventListener('input',cAll);el.addEventListener('change',cAll);});
 }
 
 function cAll(){
-document.querySelectorAll(’[id^=“fi_”]’).forEach(el=>{sv(el.id.slice(3),el.value);});
-document.querySelectorAll(‘input[type=checkbox]’).forEach(cb=>{if(cb.id){const k=cb.id.startsWith(‘c_’)?cb.id.slice(2):cb.id;sv(k,cb.checked);}});
-document.querySelectorAll(‘input[type=radio]:checked’).forEach(r=>{if(r.name)sv(r.name,r.value);});
-document.querySelectorAll(‘select’).forEach(s=>{if(s.id){const k=s.id.startsWith(‘fi_’)?s.id.slice(3):s.id.startsWith(‘s_’)?s.id.slice(2):s.id;sv(k,s.value);}});
-document.querySelectorAll(’.yrin’).forEach(el=>{if(el.id)sv(el.id.slice(3),el.value);});
+document.querySelectorAll('[id^="fi_"]').forEach(el=>{sv(el.id.slice(3),el.value);});
+document.querySelectorAll('input[type=checkbox]').forEach(cb=>{if(cb.id){const k=cb.id.startsWith('c_')?cb.id.slice(2):cb.id;sv(k,cb.checked);}});
+document.querySelectorAll('input[type=radio]:checked').forEach(r=>{if(r.name)sv(r.name,r.value);});
+document.querySelectorAll('select').forEach(s=>{if(s.id){const k=s.id.startsWith('fi_')?s.id.slice(3):s.id.startsWith('s_')?s.id.slice(2):s.id;sv(k,s.value);}});
+document.querySelectorAll('.yrin').forEach(el=>{if(el.id)sv(el.id.slice(3),el.value);});
 sST();
 }
 
